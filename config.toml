@@ -17,7 +17,7 @@ disqusShortname = "yourdiscussshortname"
   info = "Stay focused, be present"
   description = "Francis' code gists"
   keywords = "blog,developer,personal"
-  avatarurl = "images/avatar.jpg"
+  avatarurl = "images/avatar.png"
   #gravatar = "doe@example.com"
 
   favicon_32 = "images/favicon-32x32.png"

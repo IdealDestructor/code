@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Code is poetry</title>
+    <title>Code is poetry.</title>
     <link>http://code.deqiang.wang/</link>
-    <description>Recent content on Code is poetry</description>
+    <description>Recent content on Code is poetry.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="http://code.deqiang.wang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://code.deqiang.wang/about/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/about/</guid>
+      <description> 代码片段 编程总结 组件封装  </description>
+    </item>
+    
   </channel>
 </rss>
