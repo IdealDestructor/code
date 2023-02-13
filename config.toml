@@ -6,10 +6,6 @@ defaultcontentlanguage = "en"
 
 paginate = 20
 
-pygmentsstyle = "bw"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-
 disqusShortname = "yourdiscussshortname"
 
 [markup]
@@ -25,7 +21,7 @@ disqusShortname = "yourdiscussshortname"
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'monokai'
+    style = 'fruity'
     tabWidth = 4
     
 [params]
