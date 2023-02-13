@@ -1,16 +1,14 @@
-+++
-draft = true
-date = 2023-02-13T15:58:07+08:00
-title = "LeetCode[72] 编辑距离"
-description = ""
-slug = ""
-authors = []
-tags = ["动态规划"]
-categories = ["Algorithm"]
-externalLink = ""
-series = []
-
-+++
+---
+date: 2022-02-13 14:22:35
+tags: [动态规划]
+title: "LeetCode[72] 编辑距离"
+description: ""
+slug: ""
+authors: []
+categories: [编程算法]
+externalLink: ""
+series: []
+---
 
 Related Topics:
   "字符串": https://leetcode.com/tag/string/
@@ -100,4 +98,3 @@ public:
     }
 };
 ```
-

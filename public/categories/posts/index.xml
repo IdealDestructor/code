@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Code is poetry.</title>
-    <link>http://code.deqiang.wang/</link>
-    <description>Recent content on Code is poetry.</description>
+    <title>posts on Code is poetry.</title>
+    <link>http://code.deqiang.wang/categories/posts/</link>
+    <description>Recent content in posts on Code is poetry.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Feb 2022 14:22:35 +0000</lastBuildDate><atom:link href="http://code.deqiang.wang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2023 18:38:31 +0800</lastBuildDate><atom:link href="http://code.deqiang.wang/categories/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
-      <link>http://code.deqiang.wang/about/</link>
-      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      <title>LeetCode72编辑距离</title>
+      <link>http://code.deqiang.wang/posts/leetcode72%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/</link>
+      <pubDate>Mon, 13 Feb 2023 18:38:31 +0800</pubDate>
       
-      <guid>http://code.deqiang.wang/about/</guid>
-      <description> 代码片段 编程总结 组件封装  </description>
-    </item>
-    
-    <item>
-      <title>LeetCode[72] 编辑距离</title>
-      <link>http://code.deqiang.wang/posts/leetcode72-%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/</link>
-      <pubDate>Sun, 13 Feb 2022 14:22:35 +0000</pubDate>
-      
-      <guid>http://code.deqiang.wang/posts/leetcode72-%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/</guid>
+      <guid>http://code.deqiang.wang/posts/leetcode72%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/</guid>
       <description>&lt;p&gt;Related Topics:
 &amp;ldquo;字符串&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/string/&#34;&gt;https://leetcode.com/tag/string/&lt;/a&gt;
 &amp;ldquo;动态规划&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/dynamic-programming/&#34;&gt;https://leetcode.com/tag/dynamic-programming/&lt;/a&gt;
