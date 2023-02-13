@@ -1,5 +1,5 @@
 baseURL = "http://code.deqiang.wang/"
-title = "Code is poetry"
+title = "Code is poetry."
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
