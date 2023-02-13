@@ -2,32 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://code.deqiang.wang/categories/algorithm/</loc>
-    <lastmod>2023-02-13T15:58:07+08:00</lastmod>
-  </url><url>
-    <loc>http://code.deqiang.wang/categories/</loc>
-    <lastmod>2023-02-13T15:58:07+08:00</lastmod>
-  </url><url>
-    <loc>http://code.deqiang.wang/</loc>
-    <lastmod>2023-02-13T15:58:07+08:00</lastmod>
-  </url><url>
-    <loc>http://code.deqiang.wang/posts/leetcode72-%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/</loc>
-    <lastmod>2023-02-13T15:58:07+08:00</lastmod>
-  </url><url>
-    <loc>http://code.deqiang.wang/posts/</loc>
-    <lastmod>2023-02-13T15:58:07+08:00</lastmod>
-  </url><url>
-    <loc>http://code.deqiang.wang/tags/</loc>
-    <lastmod>2023-02-13T15:58:07+08:00</lastmod>
-  </url><url>
-    <loc>http://code.deqiang.wang/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
-    <lastmod>2023-02-13T15:58:07+08:00</lastmod>
-  </url><url>
     <loc>http://code.deqiang.wang/about/</loc>
     <lastmod>2023-02-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://code.deqiang.wang/authors/</loc>
   </url><url>
+    <loc>http://code.deqiang.wang/categories/</loc>
+  </url><url>
+    <loc>http://code.deqiang.wang/</loc>
+  </url><url>
     <loc>http://code.deqiang.wang/series/</loc>
+  </url><url>
+    <loc>http://code.deqiang.wang/tags/</loc>
   </url>
 </urlset>
