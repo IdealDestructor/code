@@ -8,7 +8,8 @@ paginate = 20
 pygmentsstyle = "fruity"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-disqusShortname = "yourdiscussshortname"
+
+disqusShortname = "code-rmsprdt3mn"
     
 [params]
   author = "Francis"
