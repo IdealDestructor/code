@@ -13,13 +13,13 @@
       <pubDate>Sun, 13 Feb 2022 14:22:35 +0000</pubDate>
       
       <guid>http://code.deqiang.wang/posts/leetcode72-%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/</guid>
-      <description>&lt;p&gt;Related Topics:
-&amp;ldquo;字符串&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/string/&#34;&gt;https://leetcode.com/tag/string/&lt;/a&gt;
-&amp;ldquo;动态规划&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/dynamic-programming/&#34;&gt;https://leetcode.com/tag/dynamic-programming/&lt;/a&gt;
-Similar Questions:
-&amp;ldquo;相隔为 1 的编辑距离&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/one-edit-distance/&#34;&gt;https://leetcode.com/problems/one-edit-distance/&lt;/a&gt;
-&amp;ldquo;两个字符串的删除操作&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/delete-operation-for-two-strings/&#34;&gt;https://leetcode.com/problems/delete-operation-for-two-strings/&lt;/a&gt;
-&amp;ldquo;两个字符串的最小ASCII删除和&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/&#34;&gt;https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Related Topics:&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;字符串&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/string/&#34;&gt;https://leetcode.com/tag/string/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;动态规划&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/dynamic-programming/&#34;&gt;https://leetcode.com/tag/dynamic-programming/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Similar Questions:&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;相隔为 1 的编辑距离&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/one-edit-distance/&#34;&gt;https://leetcode.com/problems/one-edit-distance/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;两个字符串的删除操作&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/delete-operation-for-two-strings/&#34;&gt;https://leetcode.com/problems/delete-operation-for-two-strings/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;两个字符串的最小ASCII删除和&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/&#34;&gt;https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&amp;ldquo;不相交的线&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/uncrossed-lines/&#34;&gt;https://leetcode.com/problems/uncrossed-lines/&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;problem&#34;&gt;
   Problem:
