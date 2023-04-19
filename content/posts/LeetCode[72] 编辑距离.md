@@ -5,7 +5,7 @@ title: "LeetCode[72] 编辑距离"
 description: ""
 slug: ""
 authors: []
-categories: [编程算法]
+categories: [Leetcode]
 externalLink: ""
 series: []
 ---
