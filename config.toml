@@ -4,7 +4,7 @@ theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
-paginate = 20
+paginate = 400
 pygmentsstyle = "fruity"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
@@ -62,6 +62,10 @@ disqusShortname = "code-rmsprdt3mn"
   weight = 1
   url  = "posts/"
 [[menu.main]]
-  name = "About"
+  name = "Categories"
   weight = 2
-  url = "about/"
+  url = "categories/"
+[[menu.main]]
+  name = "Tags"
+  weight = 3
+  url = "tags/"
