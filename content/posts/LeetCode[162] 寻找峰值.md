@@ -1,6 +1,6 @@
 ---
 title: "LeetCode[162] 寻找峰值"
-date: 2024-01-15 14:22:35
+date: 2024-01-14 14:22:35
 tags: [二分算法]
 categories: [LeetCode]
 description: ""
@@ -8,7 +8,6 @@ slug: ""
 authors: []
 externalLink: ""
 series: []
-draft: false
 ---
 
 ### Problem:
