@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数组 on Code is poetry.</title>
+    <link>http://code.deqiang.wang/tags/%E6%95%B0%E7%BB%84/</link>
+    <description>Recent content in 数组 on Code is poetry.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Dec 2021 14:22:35 +0000</lastBuildDate><atom:link href="http://code.deqiang.wang/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode[59] 螺旋矩阵II</title>
+      <link>http://code.deqiang.wang/posts/leetcode59-%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5ii/</link>
+      <pubDate>Sun, 26 Dec 2021 14:22:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode59-%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5ii/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Related Topics:
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;矩阵&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/matrix/&#34;&gt;https://leetcode.com/tag/matrix/&lt;/a&gt;
+&amp;ldquo;模拟&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/simulation/&#34;&gt;https://leetcode.com/tag/simulation/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;螺旋矩阵&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/spiral-matrix/&#34;&gt;https://leetcode.com/problems/spiral-matrix/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你一个正整数 &lt;code&gt;n&lt;/code&gt; ，生成一个包含 &lt;code&gt;1&lt;/code&gt; 到 &lt;code&gt;n2&lt;/code&gt; 所有元素，且元素按顺时针顺序螺旋排列的 &lt;code&gt;n x n&lt;/code&gt; 正方形矩阵 &lt;code&gt;matrix&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：n = 3
+输出：[[1,2,3],[8,9,4],[7,6,5]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：n = 1
+输出：[[1]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 20&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[406] 根据身高重建队列</title>
+      <link>http://code.deqiang.wang/posts/leetcode406-%E6%A0%B9%E6%8D%AE%E8%BA%AB%E9%AB%98%E9%87%8D%E5%BB%BA%E9%98%9F%E5%88%97/</link>
+      <pubDate>Mon, 06 Dec 2021 17:05:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode406-%E6%A0%B9%E6%8D%AE%E8%BA%AB%E9%AB%98%E9%87%8D%E5%BB%BA%E9%98%9F%E5%88%97/</guid>
+      <description>&lt;p&gt;Related Topics:
+&amp;ldquo;贪心&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/greedy/&#34;&gt;https://leetcode.com/tag/greedy/&lt;/a&gt;
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;排序&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/sorting/&#34;&gt;https://leetcode.com/tag/sorting/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;计算右侧小于当前元素的个数&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/count-of-smaller-numbers-after-self/&#34;&gt;https://leetcode.com/problems/count-of-smaller-numbers-after-self/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;假设有打乱顺序的一群人站成一个队列，数组 &lt;code&gt;people&lt;/code&gt; 表示队列中一些人的属性（不一定按顺序）。每个 &lt;code&gt;people[i] = [hi, ki]&lt;/code&gt; 表示第 &lt;code&gt;i&lt;/code&gt; 个人的身高为 &lt;code&gt;hi&lt;/code&gt; ，前面 &lt;strong&gt;正好&lt;/strong&gt; 有 &lt;code&gt;ki&lt;/code&gt; 个身高大于或等于 &lt;code&gt;hi&lt;/code&gt; 的人。&lt;/p&gt;
+&lt;p&gt;请你重新构造并返回输入数组 &lt;code&gt;people&lt;/code&gt; 所表示的队列。返回的队列应该格式化为数组 &lt;code&gt;queue&lt;/code&gt; ，其中 &lt;code&gt;queue[j] = [hj, kj]&lt;/code&gt; 是队列中第 &lt;code&gt;j&lt;/code&gt; 个人的属性（&lt;code&gt;queue[0]&lt;/code&gt; 是排在队列前面的人）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]
+输出：[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]
+解释：
+编号为 0 的人身高为 5 ，没有身高更高或者相同的人排在他前面。
+编号为 1 的人身高为 7 ，没有身高更高或者相同的人排在他前面。
+编号为 2 的人身高为 5 ，有 2 个身高更高或者相同的人排在他前面，即编号为 0 和 1 的人。
+编号为 3 的人身高为 6 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。
+编号为 4 的人身高为 4 ，有 4 个身高更高或者相同的人排在他前面，即编号为 0、1、2、3 的人。
+编号为 5 的人身高为 7 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。
+因此 [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]] 是重新构造后的队列。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：people = [[6,0],[5,0],[4,0],[3,2],[2,2],[1,4]]
+输出：[[4,0],[5,0],[2,2],[3,2],[1,4],[6,0]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= people.length &amp;lt;= 2000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= hi &amp;lt;= 106&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= ki &amp;lt; people.length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;题目数据确保队列可以被重建&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[56] 合并区间</title>
+      <link>http://code.deqiang.wang/posts/leetcode56-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/</link>
+      <pubDate>Sat, 27 Mar 2021 14:22:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode56-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;排序&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/sort/&#34;&gt;https://leetcode.com/tag/sort/&lt;/a&gt;
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;插入区间&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/insert-interval/&#34;&gt;https://leetcode.com/problems/insert-interval/&lt;/a&gt;
+&amp;ldquo;会议室&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/meeting-rooms/&#34;&gt;https://leetcode.com/problems/meeting-rooms/&lt;/a&gt;
+&amp;ldquo;会议室 II&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/meeting-rooms-ii/&#34;&gt;https://leetcode.com/problems/meeting-rooms-ii/&lt;/a&gt;
+&amp;ldquo;提莫攻击&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/teemo-attacking/&#34;&gt;https://leetcode.com/problems/teemo-attacking/&lt;/a&gt;
+&amp;ldquo;给字符串添加加粗标签&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/add-bold-tag-in-string/&#34;&gt;https://leetcode.com/problems/add-bold-tag-in-string/&lt;/a&gt;
+&amp;ldquo;Range 模块&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/range-module/&#34;&gt;https://leetcode.com/problems/range-module/&lt;/a&gt;
+&amp;ldquo;员工空闲时间&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/employee-free-time/&#34;&gt;https://leetcode.com/problems/employee-free-time/&lt;/a&gt;
+&amp;ldquo;划分字母区间&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/partition-labels/&#34;&gt;https://leetcode.com/problems/partition-labels/&lt;/a&gt;
+&amp;ldquo;区间列表的交集&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/interval-list-intersections/&#34;&gt;https://leetcode.com/problems/interval-list-intersections/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;以数组 &lt;code&gt;intervals&lt;/code&gt; 表示若干个区间的集合，其中单个区间为 &lt;code&gt;intervals[i] = [starti, endi]&lt;/code&gt; 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：intervals = [[1,3],[2,6],[8,10],[15,18]]
+输出：[[1,6],[8,10],[15,18]]
+解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：intervals = [[1,4],[4,5]]
+输出：[[1,5]]
+解释：区间 [1,4] 和 [4,5] 可被视为重叠区间。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= intervals.length &amp;lt;= 104&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;intervals[i].length == 2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= starti &amp;lt;= endi &amp;lt;= 104&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

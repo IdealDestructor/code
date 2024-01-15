@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  LeetCode[415]字符串相加 · Code is poetry.
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Francis">
+<meta name="description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;字符串&rdquo;: https://leetcode.com/tag/string/
+Similar Questions:
+&ldquo;两数相加&rdquo;: https://leetcode.com/problems/add-two-numbers/
+&ldquo;字符串相乘&rdquo;: https://leetcode.com/problems/multiply-strings/
+&ldquo;数组形式的整数加法&rdquo;: https://leetcode.com/problems/add-to-array-form-of-integer/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
+提示：
+
+num1 和num2 的长度都小于 5100
+num1 和num2 都只包含数字 0-9
+num1 和num2 都不包含任何前导零
+你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式
+">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LeetCode[415]字符串相加"/>
+<meta name="twitter:description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;字符串&rdquo;: https://leetcode.com/tag/string/
+Similar Questions:
+&ldquo;两数相加&rdquo;: https://leetcode.com/problems/add-two-numbers/
+&ldquo;字符串相乘&rdquo;: https://leetcode.com/problems/multiply-strings/
+&ldquo;数组形式的整数加法&rdquo;: https://leetcode.com/problems/add-to-array-form-of-integer/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
+提示：
+
+num1 和num2 的长度都小于 5100
+num1 和num2 都只包含数字 0-9
+num1 和num2 都不包含任何前导零
+你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式
+"/>
+
+<meta property="og:title" content="LeetCode[415]字符串相加" />
+<meta property="og:description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;字符串&rdquo;: https://leetcode.com/tag/string/
+Similar Questions:
+&ldquo;两数相加&rdquo;: https://leetcode.com/problems/add-two-numbers/
+&ldquo;字符串相乘&rdquo;: https://leetcode.com/problems/multiply-strings/
+&ldquo;数组形式的整数加法&rdquo;: https://leetcode.com/problems/add-to-array-form-of-integer/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
+提示：
+
+num1 和num2 的长度都小于 5100
+num1 和num2 都只包含数字 0-9
+num1 和num2 都不包含任何前导零
+你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://code.deqiang.wang/posts/leetcode415-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%8A%A0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-25T21:43:35+00:00" />
+<meta property="article:modified_time" content="2021-04-25T21:43:35+00:00" />
+
+
+
+
+
+<link rel="canonical" href="http://code.deqiang.wang/posts/leetcode415-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%8A%A0/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.0fa2dc75ed1b76894ac0e062b10a6c4730daa745096fa120114b290ed8a48788.css" integrity="sha256-D6Lcde0bdolKwOBisQpsRzDap0UJb6EgEUspDtikh4g=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/avatar32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/avatar16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.85.0" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Code is poetry.
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">Categories</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">Tags</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://code.deqiang.wang/posts/leetcode415-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%8A%A0/">
+              LeetCode[415]字符串相加
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-04-25T21:43:35Z">
+                April 25, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/leetcode/">LeetCode</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h3 id="related-topics">
+  Related Topics:
+  <a class="heading-link" href="#related-topics">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>&ldquo;字符串&rdquo;: <a href="https://leetcode.com/tag/string/">https://leetcode.com/tag/string/</a>
+Similar Questions:
+&ldquo;两数相加&rdquo;: <a href="https://leetcode.com/problems/add-two-numbers/">https://leetcode.com/problems/add-two-numbers/</a>
+&ldquo;字符串相乘&rdquo;: <a href="https://leetcode.com/problems/multiply-strings/">https://leetcode.com/problems/multiply-strings/</a>
+&ldquo;数组形式的整数加法&rdquo;: <a href="https://leetcode.com/problems/add-to-array-form-of-integer/">https://leetcode.com/problems/add-to-array-form-of-integer/</a></p>
+<h3 id="problem">
+  Problem:
+  <a class="heading-link" href="#problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>给定两个字符串形式的非负整数 <code>num1</code> 和<code>num2</code> ，计算它们的和。</p>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>num1</code> 和<code>num2</code> 的长度都小于 5100</li>
+<li><code>num1</code> 和<code>num2</code> 都只包含数字 <code>0-9</code></li>
+<li><code>num1</code> 和<code>num2</code> 都不包含任何前导零</li>
+<li><strong>你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式</strong></li>
+</ol>
+<h3 id="solution">
+  Solution:
+  <a class="heading-link" href="#solution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>方法一：模拟
+思路与算法
+本题我们只需要对两个大整数模拟「坚式加法」的过程。坚式加法就是我们平常学习生活中常用的对两个整 数相加的方法，回想一下我们在纸上对两个整数相加的操作，是不是如下图将相同数位对齐，从低到高逐位 相加，如果当前位和超过 10, 则向高位进一位? 因此我们只要将这个过程用代码写出来即可。
+具体实现也不复杂，我们定义两个指针 (i) 和 (j) 分别指向 (n u m 1) 和 (n u m 2) 的末尾，即最低位，同时定义一个变 量 (a d d) 维护当前是否有进位，然后从末尾到开头逐位相加即可。你可能会想两个数字位数不同怎么处理，这 里我们统一在指针当前下标处于负数的时候返回 0, 等价于对位数较短的数字进行了补零操作，这样就可以 除去两个数字位数不同情况的处理，具体可以看下面的代码。</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#fb660a;font-weight:bold">class</span> Solution
+{
+<span style="color:#fb660a;font-weight:bold">public</span>:
+    string addStrings(string num1, string num2)
+    {
+        <span style="color:#cdcaa9;font-weight:bold">int</span> i = num1.length() - <span style="color:#0086f7;font-weight:bold">1</span>, j = num2.length() - <span style="color:#0086f7;font-weight:bold">1</span>, add = <span style="color:#0086f7;font-weight:bold">0</span>;
+        string answer = <span style="color:#0086d2">&#34;&#34;</span>;
+        <span style="color:#fb660a;font-weight:bold">while</span> (i &gt;= <span style="color:#0086f7;font-weight:bold">0</span> || j &gt;= <span style="color:#0086f7;font-weight:bold">0</span> || add)
+        {
+            <span style="color:#cdcaa9;font-weight:bold">int</span> x = i &gt;= <span style="color:#0086f7;font-weight:bold">0</span> ? num1[i] - <span style="color:#0086d2">&#39;0&#39;</span> : <span style="color:#0086f7;font-weight:bold">0</span>;
+            <span style="color:#cdcaa9;font-weight:bold">int</span> y = j &gt;= <span style="color:#0086f7;font-weight:bold">0</span> ? num2[j] - <span style="color:#0086d2">&#39;0&#39;</span> : <span style="color:#0086f7;font-weight:bold">0</span>;
+            <span style="color:#cdcaa9;font-weight:bold">int</span> result = x + y + add;
+            answer += <span style="color:#0086d2">&#39;0&#39;</span> + result % <span style="color:#0086f7;font-weight:bold">10</span>;
+            add = result / <span style="color:#0086f7;font-weight:bold">10</span>;
+            i-=<span style="color:#0086f7;font-weight:bold">1</span>;
+            j-=<span style="color:#0086f7;font-weight:bold">1</span>;
+        }
+        <span style="color:#080;background-color:#0f140f;font-style:italic">//翻转
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>        reverse(answer.begin(), answer.end());
+        <span style="color:#fb660a;font-weight:bold">return</span> answer;
+    }
+};
+</code></pre></div><p>复杂度分析
+时间复杂度： $O(\max (l e n 1, l e n 2))$, 其中 $l e n 1=n u m 1 .$ length, $l e n 2=n u m_{2} .$ length $_{\circ}$ 坚式加法的次数取 决于较大数的位数。 空间复杂度： $O(1)$ 。除答案外我们只需要常数空间存放若干变量。在 Java 解法中使用到了 StringBuffer, 故 Java 解法的空间复杂度为 $O(n)$ 。</p>
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "code-rmsprdt3mn" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Francis 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.369d90111ae4409b4e51de5efd23a46b92663fcc82dc9a0efde7f70bffc3f949.js" integrity="sha256-Np2QERrkQJtOUd5e/SOka5JmP8yC3JoO/ef3C//D&#43;Uk="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

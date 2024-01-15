@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  LeetCode[141] 环形链表 · Code is poetry.
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Francis">
+<meta name="description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;链表&rdquo;: https://leetcode.com/tag/linked-list/
+&ldquo;双指针&rdquo;: https://leetcode.com/tag/two-pointers/
+Similar Questions:
+&ldquo;环形链表 II&rdquo;: https://leetcode.com/problems/linked-list-cycle-ii/
+&ldquo;快乐数&rdquo;: https://leetcode.com/problems/happy-number/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给定一个链表，判断链表中是否有环。
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+如果链表中存在环，则返回 true 。 否则，返回 false 。
+进阶：
+你能用 O(1)（即，常量）内存解决此问题吗？
+示例 1：
+输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。
+示例 2：
+输入：head = [1,2], pos = 0
+输出：true
+解释：链表中有一个环，其尾部连接到第一个节点。
+示例 3：
+输入：head = [1], pos = -1
+输出：false
+解释：链表中没有环。
+提示：
+
+链表中节点的数目范围是 [0, 104]
+-105 &lt;= Node.val &lt;= 105
+pos 为 -1 或者链表中的一个 有效索引 。
+">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LeetCode[141] 环形链表"/>
+<meta name="twitter:description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;链表&rdquo;: https://leetcode.com/tag/linked-list/
+&ldquo;双指针&rdquo;: https://leetcode.com/tag/two-pointers/
+Similar Questions:
+&ldquo;环形链表 II&rdquo;: https://leetcode.com/problems/linked-list-cycle-ii/
+&ldquo;快乐数&rdquo;: https://leetcode.com/problems/happy-number/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给定一个链表，判断链表中是否有环。
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+如果链表中存在环，则返回 true 。 否则，返回 false 。
+进阶：
+你能用 O(1)（即，常量）内存解决此问题吗？
+示例 1：
+输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。
+示例 2：
+输入：head = [1,2], pos = 0
+输出：true
+解释：链表中有一个环，其尾部连接到第一个节点。
+示例 3：
+输入：head = [1], pos = -1
+输出：false
+解释：链表中没有环。
+提示：
+
+链表中节点的数目范围是 [0, 104]
+-105 &lt;= Node.val &lt;= 105
+pos 为 -1 或者链表中的一个 有效索引 。
+"/>
+
+<meta property="og:title" content="LeetCode[141] 环形链表" />
+<meta property="og:description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;链表&rdquo;: https://leetcode.com/tag/linked-list/
+&ldquo;双指针&rdquo;: https://leetcode.com/tag/two-pointers/
+Similar Questions:
+&ldquo;环形链表 II&rdquo;: https://leetcode.com/problems/linked-list-cycle-ii/
+&ldquo;快乐数&rdquo;: https://leetcode.com/problems/happy-number/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给定一个链表，判断链表中是否有环。
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+如果链表中存在环，则返回 true 。 否则，返回 false 。
+进阶：
+你能用 O(1)（即，常量）内存解决此问题吗？
+示例 1：
+输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。
+示例 2：
+输入：head = [1,2], pos = 0
+输出：true
+解释：链表中有一个环，其尾部连接到第一个节点。
+示例 3：
+输入：head = [1], pos = -1
+输出：false
+解释：链表中没有环。
+提示：
+
+链表中节点的数目范围是 [0, 104]
+-105 &lt;= Node.val &lt;= 105
+pos 为 -1 或者链表中的一个 有效索引 。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://code.deqiang.wang/posts/leetcode141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-24T17:05:45+00:00" />
+<meta property="article:modified_time" content="2021-04-24T17:05:45+00:00" />
+
+
+
+
+
+<link rel="canonical" href="http://code.deqiang.wang/posts/leetcode141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.0fa2dc75ed1b76894ac0e062b10a6c4730daa745096fa120114b290ed8a48788.css" integrity="sha256-D6Lcde0bdolKwOBisQpsRzDap0UJb6EgEUspDtikh4g=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/avatar32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/avatar16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.85.0" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Code is poetry.
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">Categories</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">Tags</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://code.deqiang.wang/posts/leetcode141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/">
+              LeetCode[141] 环形链表
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-04-24T17:05:45Z">
+                April 24, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/leetcode/">LeetCode</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h3 id="related-topics">
+  Related Topics:
+  <a class="heading-link" href="#related-topics">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>&ldquo;链表&rdquo;: <a href="https://leetcode.com/tag/linked-list/">https://leetcode.com/tag/linked-list/</a>
+&ldquo;双指针&rdquo;: <a href="https://leetcode.com/tag/two-pointers/">https://leetcode.com/tag/two-pointers/</a>
+Similar Questions:
+&ldquo;环形链表 II&rdquo;: <a href="https://leetcode.com/problems/linked-list-cycle-ii/">https://leetcode.com/problems/linked-list-cycle-ii/</a>
+&ldquo;快乐数&rdquo;: <a href="https://leetcode.com/problems/happy-number/">https://leetcode.com/problems/happy-number/</a></p>
+<h3 id="problem">
+  Problem:
+  <a class="heading-link" href="#problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>给定一个链表，判断链表中是否有环。</p>
+<p>如果链表中有某个节点，可以通过连续跟踪 <code>next</code> 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意：pos 不作为参数进行传递</strong>，仅仅是为了标识链表的实际情况。</p>
+<p>如果链表中存在环，则返回 <code>true</code> 。 否则，返回 <code>false</code> 。</p>
+<p><strong>进阶：</strong></p>
+<p>你能用 <em>O(1)</em>（即，常量）内存解决此问题吗？</p>
+<p><strong>示例 1：</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。
+</code></pre></div><p><strong>示例 2：</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：head = [1,2], pos = 0
+输出：true
+解释：链表中有一个环，其尾部连接到第一个节点。
+</code></pre></div><p><strong>示例 3：</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：head = [1], pos = -1
+输出：false
+解释：链表中没有环。
+</code></pre></div><p><strong>提示：</strong></p>
+<ul>
+<li>链表中节点的数目范围是 <code>[0, 104]</code></li>
+<li><code>-105 &lt;= Node.val &lt;= 105</code></li>
+<li><code>pos</code> 为 <code>-1</code> 或者链表中的一个 <strong>有效索引</strong> 。</li>
+</ul>
+<h3 id="solution">
+  Solution:
+  <a class="heading-link" href="#solution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>方法一：哈希表</p>
+<p>思路及算法</p>
+<p>最容易想到的方法是遍历所有节点，每次遍历到一个节点时，判断该节点此前是否被访问过。</p>
+<p>具体地，我们可以使用哈希表来存储所有已经访问过的节点。每次我们到达一个节点，如果该节点已经存在于哈希表中，则说明该链表是环形链表，否则就将该节点加入哈希表中。重复这一过程，直到我们遍历完整个链表即可。</p>
+<p>复杂度分析</p>
+<p>时间复杂度：O(n)，其中 n 是链表中的节点数。最坏情况下我们需要遍历每个节点一次。
+空间复杂度：O(n)，其中 n 是链表中的节点数。主要为哈希表的开销，最坏情况下我们需要将每个节点插入到哈希表中一次。
+方法二：快慢指针</p>
+<p>思路及算法</p>
+<p>本方法需要读者对「Floyd 判圈算法」（又称龟兔赛跑算法）有所了解。</p>
+<p>假想「乌龟」和「兔子」在链表上移动，「兔子」跑得快，「乌龟」跑得慢。当「乌龟」和「兔子」从链表上的同一个节点开始移动时，如果该链表中没有环，那么「兔子」将一直处于「乌龟」的前方；如果该链表中有环，那么「兔子」会先于「乌龟」进入环，并且一直在环内移动。等到「乌龟」进入环时，由于「兔子」的速度快，它一定会在某个时刻与乌龟相遇，即套了「乌龟」若干圈。</p>
+<p>我们可以根据上述思路来解决本题。具体地，我们定义两个指针，一快一满。慢指针每次只移动一步，而快指针每次移动两步。初始时，慢指针在位置 head，而快指针在位置 head.next。这样一来，如果在移动的过程中，快指针反过来追上慢指针，就说明该链表为环形链表。否则快指针将到达链表尾部，该链表不为环形链表。</p>
+<p>细节</p>
+<p>为什么我们要规定初始时慢指针在位置 head，快指针在位置 head.next，而不是两个指针都在位置 head（即与「乌龟」和「兔子」中的叙述相同）？</p>
+<p>观察下面的代码，我们使用的是 while 循环，循环条件先于循环体。由于循环条件一定是判断快慢指针是否重合，如果我们将两个指针初始都置于 head，那么 while 循环就不会执行。因此，我们可以假想一个在 head 之前的虚拟节点，慢指针从虚拟节点移动一步到达 head，快指针从虚拟节点移动两步到达 head.next，这样我们就可以使用 while 循环了。
+当然，我们也可以使用 do-while 循环。此时，我们就可以把快慢指针的初始值都置为 head。
+复杂度分析</p>
+<p>时间复杂度：O(N)，其中N 是链表中的节点数。
+当链表中不存在环时，快指针将先于慢指针到达链表尾部，链表中每个节点至多被访问两次。
+当链表中存在环时，每一轮移动后，快慢指针的距离将减小一。而初始距离为环的长度，因此至多移动 N 轮。
+空间复杂度：O(1)。我们只使用了两个指针的额外空间。</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#fb660a;font-weight:bold">class</span> Solution {
+<span style="color:#fb660a;font-weight:bold">public</span>:
+    <span style="color:#080;background-color:#0f140f;font-style:italic">// 哈希表法
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// bool hasCycle(ListNode *head) {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//     unordered_set&lt;ListNode*&gt; seen;
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//     while (head!=nullptr) {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//         if(seen.count(head)){
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//             return true;
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//         }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//         seen.insert(head);
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//         head = head-&gt;next;
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//     }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//     return false;
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//快慢指针
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">bool</span> hasCycle(ListNode* head) {
+        <span style="color:#fb660a;font-weight:bold">if</span>(head == <span style="color:#fb660a;font-weight:bold">nullptr</span> || head-&gt;next == <span style="color:#fb660a;font-weight:bold">nullptr</span>){
+            <span style="color:#fb660a;font-weight:bold">return</span> false;
+        }
+        ListNode* slow = head;
+        ListNode* fast = head-&gt;next;
+        <span style="color:#fb660a;font-weight:bold">while</span>(slow != fast){
+            <span style="color:#fb660a;font-weight:bold">if</span>(fast == <span style="color:#fb660a;font-weight:bold">nullptr</span> || fast-&gt;next == <span style="color:#fb660a;font-weight:bold">nullptr</span>){
+                <span style="color:#fb660a;font-weight:bold">return</span> false;
+            }
+            slow = slow-&gt;next;
+            fast = fast-&gt;next-&gt;next;
+        }
+        <span style="color:#fb660a;font-weight:bold">return</span> true;
+    }
+};
+</code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "code-rmsprdt3mn" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Francis 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.369d90111ae4409b4e51de5efd23a46b92663fcc82dc9a0efde7f70bffc3f949.js" integrity="sha256-Np2QERrkQJtOUd5e/SOka5JmP8yC3JoO/ef3C//D&#43;Uk="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

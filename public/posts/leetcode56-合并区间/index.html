@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  LeetCode[56] 合并区间 · Code is poetry.
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Francis">
+<meta name="description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;排序&rdquo;: https://leetcode.com/tag/sort/
+&ldquo;数组&rdquo;: https://leetcode.com/tag/array/
+Similar Questions:
+&ldquo;插入区间&rdquo;: https://leetcode.com/problems/insert-interval/
+&ldquo;会议室&rdquo;: https://leetcode.com/problems/meeting-rooms/
+&ldquo;会议室 II&rdquo;: https://leetcode.com/problems/meeting-rooms-ii/
+&ldquo;提莫攻击&rdquo;: https://leetcode.com/problems/teemo-attacking/
+&ldquo;给字符串添加加粗标签&rdquo;: https://leetcode.com/problems/add-bold-tag-in-string/
+&ldquo;Range 模块&rdquo;: https://leetcode.com/problems/range-module/
+&ldquo;员工空闲时间&rdquo;: https://leetcode.com/problems/employee-free-time/
+&ldquo;划分字母区间&rdquo;: https://leetcode.com/problems/partition-labels/
+&ldquo;区间列表的交集&rdquo;: https://leetcode.com/problems/interval-list-intersections/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
+示例 1：
+输入：intervals = [[1,3],[2,6],[8,10],[15,18]]
+输出：[[1,6],[8,10],[15,18]]
+解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+示例 2：
+输入：intervals = [[1,4],[4,5]]
+输出：[[1,5]]
+解释：区间 [1,4] 和 [4,5] 可被视为重叠区间。
+提示：
+
+1 &lt;= intervals.length &lt;= 104
+intervals[i].length == 2
+0 &lt;= starti &lt;= endi &lt;= 104
+">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LeetCode[56] 合并区间"/>
+<meta name="twitter:description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;排序&rdquo;: https://leetcode.com/tag/sort/
+&ldquo;数组&rdquo;: https://leetcode.com/tag/array/
+Similar Questions:
+&ldquo;插入区间&rdquo;: https://leetcode.com/problems/insert-interval/
+&ldquo;会议室&rdquo;: https://leetcode.com/problems/meeting-rooms/
+&ldquo;会议室 II&rdquo;: https://leetcode.com/problems/meeting-rooms-ii/
+&ldquo;提莫攻击&rdquo;: https://leetcode.com/problems/teemo-attacking/
+&ldquo;给字符串添加加粗标签&rdquo;: https://leetcode.com/problems/add-bold-tag-in-string/
+&ldquo;Range 模块&rdquo;: https://leetcode.com/problems/range-module/
+&ldquo;员工空闲时间&rdquo;: https://leetcode.com/problems/employee-free-time/
+&ldquo;划分字母区间&rdquo;: https://leetcode.com/problems/partition-labels/
+&ldquo;区间列表的交集&rdquo;: https://leetcode.com/problems/interval-list-intersections/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
+示例 1：
+输入：intervals = [[1,3],[2,6],[8,10],[15,18]]
+输出：[[1,6],[8,10],[15,18]]
+解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+示例 2：
+输入：intervals = [[1,4],[4,5]]
+输出：[[1,5]]
+解释：区间 [1,4] 和 [4,5] 可被视为重叠区间。
+提示：
+
+1 &lt;= intervals.length &lt;= 104
+intervals[i].length == 2
+0 &lt;= starti &lt;= endi &lt;= 104
+"/>
+
+<meta property="og:title" content="LeetCode[56] 合并区间" />
+<meta property="og:description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;排序&rdquo;: https://leetcode.com/tag/sort/
+&ldquo;数组&rdquo;: https://leetcode.com/tag/array/
+Similar Questions:
+&ldquo;插入区间&rdquo;: https://leetcode.com/problems/insert-interval/
+&ldquo;会议室&rdquo;: https://leetcode.com/problems/meeting-rooms/
+&ldquo;会议室 II&rdquo;: https://leetcode.com/problems/meeting-rooms-ii/
+&ldquo;提莫攻击&rdquo;: https://leetcode.com/problems/teemo-attacking/
+&ldquo;给字符串添加加粗标签&rdquo;: https://leetcode.com/problems/add-bold-tag-in-string/
+&ldquo;Range 模块&rdquo;: https://leetcode.com/problems/range-module/
+&ldquo;员工空闲时间&rdquo;: https://leetcode.com/problems/employee-free-time/
+&ldquo;划分字母区间&rdquo;: https://leetcode.com/problems/partition-labels/
+&ldquo;区间列表的交集&rdquo;: https://leetcode.com/problems/interval-list-intersections/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
+示例 1：
+输入：intervals = [[1,3],[2,6],[8,10],[15,18]]
+输出：[[1,6],[8,10],[15,18]]
+解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+示例 2：
+输入：intervals = [[1,4],[4,5]]
+输出：[[1,5]]
+解释：区间 [1,4] 和 [4,5] 可被视为重叠区间。
+提示：
+
+1 &lt;= intervals.length &lt;= 104
+intervals[i].length == 2
+0 &lt;= starti &lt;= endi &lt;= 104
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://code.deqiang.wang/posts/leetcode56-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-27T14:22:35+00:00" />
+<meta property="article:modified_time" content="2021-03-27T14:22:35+00:00" />
+
+
+
+
+
+<link rel="canonical" href="http://code.deqiang.wang/posts/leetcode56-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.0fa2dc75ed1b76894ac0e062b10a6c4730daa745096fa120114b290ed8a48788.css" integrity="sha256-D6Lcde0bdolKwOBisQpsRzDap0UJb6EgEUspDtikh4g=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/avatar32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/avatar16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.85.0" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Code is poetry.
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">Categories</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">Tags</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://code.deqiang.wang/posts/leetcode56-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/">
+              LeetCode[56] 合并区间
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-03-27T14:22:35Z">
+                March 27, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/leetcode/">LeetCode</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h3 id="related-topics">
+  Related Topics:
+  <a class="heading-link" href="#related-topics">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>&ldquo;排序&rdquo;: <a href="https://leetcode.com/tag/sort/">https://leetcode.com/tag/sort/</a>
+&ldquo;数组&rdquo;: <a href="https://leetcode.com/tag/array/">https://leetcode.com/tag/array/</a>
+Similar Questions:
+&ldquo;插入区间&rdquo;: <a href="https://leetcode.com/problems/insert-interval/">https://leetcode.com/problems/insert-interval/</a>
+&ldquo;会议室&rdquo;: <a href="https://leetcode.com/problems/meeting-rooms/">https://leetcode.com/problems/meeting-rooms/</a>
+&ldquo;会议室 II&rdquo;: <a href="https://leetcode.com/problems/meeting-rooms-ii/">https://leetcode.com/problems/meeting-rooms-ii/</a>
+&ldquo;提莫攻击&rdquo;: <a href="https://leetcode.com/problems/teemo-attacking/">https://leetcode.com/problems/teemo-attacking/</a>
+&ldquo;给字符串添加加粗标签&rdquo;: <a href="https://leetcode.com/problems/add-bold-tag-in-string/">https://leetcode.com/problems/add-bold-tag-in-string/</a>
+&ldquo;Range 模块&rdquo;: <a href="https://leetcode.com/problems/range-module/">https://leetcode.com/problems/range-module/</a>
+&ldquo;员工空闲时间&rdquo;: <a href="https://leetcode.com/problems/employee-free-time/">https://leetcode.com/problems/employee-free-time/</a>
+&ldquo;划分字母区间&rdquo;: <a href="https://leetcode.com/problems/partition-labels/">https://leetcode.com/problems/partition-labels/</a>
+&ldquo;区间列表的交集&rdquo;: <a href="https://leetcode.com/problems/interval-list-intersections/">https://leetcode.com/problems/interval-list-intersections/</a></p>
+<h3 id="problem">
+  Problem:
+  <a class="heading-link" href="#problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>以数组 <code>intervals</code> 表示若干个区间的集合，其中单个区间为 <code>intervals[i] = [starti, endi]</code> 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。</p>
+<p><strong>示例 1：</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：intervals = [[1,3],[2,6],[8,10],[15,18]]
+输出：[[1,6],[8,10],[15,18]]
+解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+</code></pre></div><p><strong>示例 2：</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：intervals = [[1,4],[4,5]]
+输出：[[1,5]]
+解释：区间 [1,4] 和 [4,5] 可被视为重叠区间。
+</code></pre></div><p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= intervals.length &lt;= 104</code></li>
+<li><code>intervals[i].length == 2</code></li>
+<li><code>0 &lt;= starti &lt;= endi &lt;= 104</code></li>
+</ul>
+<h3 id="solution">
+  Solution:
+  <a class="heading-link" href="#solution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>算法</p>
+<p>我们用数组 merged 存储最终的答案。</p>
+<p>首先，我们将列表中的区间按照左端点升序排序。然后我们将第一个区间加入 merged 数组中，并按顺序依次考虑之后的每个区间：</p>
+<p>如果当前区间的左端点在数组 merged 中最后一个区间的右端点之后，那么它们不会重合，我们可以直接将这个区间加入数组 merged 的末尾；</p>
+<p>否则，它们重合，我们需要用当前区间的右端点更新数组 merged 中最后一个区间的右端点，将其置为二者的较大值。</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#fb660a;font-weight:bold">class</span> Solution {
+<span style="color:#fb660a;font-weight:bold">public</span>:
+    vector&lt;vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt;&gt; merge(vector&lt;vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt;&gt;&amp; intervals) {
+       sort(intervals.begin(), intervals.end());
+        vector&lt;vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt;&gt; merged;
+        <span style="color:#fb660a;font-weight:bold">for</span>(<span style="color:#cdcaa9;font-weight:bold">int</span> i=<span style="color:#0086f7;font-weight:bold">0</span>;i&lt;intervals.size();++i){
+            <span style="color:#cdcaa9;font-weight:bold">int</span> L = intervals[i][<span style="color:#0086f7;font-weight:bold">0</span>], R = intervals[i][<span style="color:#0086f7;font-weight:bold">1</span>];
+            <span style="color:#fb660a;font-weight:bold">if</span>(!merged.size() || merged.back()[<span style="color:#0086f7;font-weight:bold">1</span>] &lt; L){
+                merged.push_back({L,R});
+            }<span style="color:#fb660a;font-weight:bold">else</span>{
+                merged.back()[<span style="color:#0086f7;font-weight:bold">1</span>]=max(R,merged.back()[<span style="color:#0086f7;font-weight:bold">1</span>]);
+            }
+        }
+        <span style="color:#fb660a;font-weight:bold">return</span> merged;
+    }
+};
+</code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "code-rmsprdt3mn" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Francis 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.369d90111ae4409b4e51de5efd23a46b92663fcc82dc9a0efde7f70bffc3f949.js" integrity="sha256-Np2QERrkQJtOUd5e/SOka5JmP8yC3JoO/ef3C//D&#43;Uk="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

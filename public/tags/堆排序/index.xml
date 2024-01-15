@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>堆排序 on Code is poetry.</title>
+    <link>http://code.deqiang.wang/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
+    <description>Recent content in 堆排序 on Code is poetry.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Mar 2021 11:29:45 +0000</lastBuildDate><atom:link href="http://code.deqiang.wang/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode[215] 数组中的第K个最大元素</title>
+      <link>http://code.deqiang.wang/posts/leetcode215-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Fri, 26 Mar 2021 11:29:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode215-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Related Topics:
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;分治&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/divide-and-conquer/&#34;&gt;https://leetcode.com/tag/divide-and-conquer/&lt;/a&gt;
+&amp;ldquo;快速选择&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/quickselect/&#34;&gt;https://leetcode.com/tag/quickselect/&lt;/a&gt;
+&amp;ldquo;排序&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/sorting/&#34;&gt;https://leetcode.com/tag/sorting/&lt;/a&gt;
+&amp;ldquo;堆（优先队列）&amp;quot;: &lt;a href=&#34;https://leetcode.com/tag/heap-priority-queue/&#34;&gt;https://leetcode.com/tag/heap-priority-queue/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;摆动排序 II&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/wiggle-sort-ii/&#34;&gt;https://leetcode.com/problems/wiggle-sort-ii/&lt;/a&gt;
+&amp;ldquo;前 K 个高频元素&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/top-k-frequent-elements/&#34;&gt;https://leetcode.com/problems/top-k-frequent-elements/&lt;/a&gt;
+&amp;ldquo;第三大的数&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/third-maximum-number/&#34;&gt;https://leetcode.com/problems/third-maximum-number/&lt;/a&gt;
+&amp;ldquo;数据流中的第 K 大元素&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/kth-largest-element-in-a-stream/&#34;&gt;https://leetcode.com/problems/kth-largest-element-in-a-stream/&lt;/a&gt;
+&amp;ldquo;最接近原点的 K 个点&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/k-closest-points-to-origin/&#34;&gt;https://leetcode.com/problems/k-closest-points-to-origin/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给定整数数组 &lt;code&gt;nums&lt;/code&gt; 和整数 &lt;code&gt;k&lt;/code&gt;，请返回数组中第 &lt;code&gt;**k**&lt;/code&gt; 个最大的元素。&lt;/p&gt;
+&lt;p&gt;请注意，你需要找的是数组排序后的第 &lt;code&gt;k&lt;/code&gt; 个最大的元素，而不是第 &lt;code&gt;k&lt;/code&gt; 个不同的元素。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: [3,2,1,5,6,4] 和 k = 2
+输出: 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
+输出: 4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= k &amp;lt;= nums.length &amp;lt;= 104&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-104 &amp;lt;= nums[i] &amp;lt;= 104&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

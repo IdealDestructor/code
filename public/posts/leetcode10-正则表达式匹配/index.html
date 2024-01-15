@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  LeetCode[10] 正则表达式匹配 · Code is poetry.
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Francis">
+<meta name="description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;字符串&rdquo;: https://leetcode.com/tag/string/ &ldquo;动态规划&rdquo;: https://leetcode.com/tag/dynamic-programming/ &ldquo;回溯算法&rdquo;: https://leetcode.com/tag/backtracking/ Similar Questions: &ldquo;通配符匹配&rdquo;: https://leetcode.com/problems/wildcard-matching/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 &#39;.&#39; 和 &#39;*&#39; 的正则表达式匹配。
+
+&#39;.&#39; 匹配任意单个字符
+&#39;*&#39; 匹配零个或多个前面的那一个元素
+
+所谓匹配，是要涵盖 整个字符串 s的，而不是部分字符串。
+示例 1：
+输入：s = &#34;aa&#34; p = &#34;a&#34;
+输出：false
+解释：&#34;a&#34; 无法匹配 &#34;aa&#34; 整个字符串。
+示例 2:
+输入：s = &#34;aa&#34; p = &#34;a*&#34;
+输出：true
+解释：因为 &#39;*&#39; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &#39;a&#39;。因此，字符串 &#34;aa&#34; 可被视为 &#39;a&#39; 重复了一次。
+示例 3：
+输入：s = &#34;ab&#34; p = &#34;.*&#34;
+输出：true
+解释：&#34;.*&#34; 表示可匹配零个或多个（&#39;*&#39;）任意字符（&#39;.&#39;）。
+示例 4：
+输入：s = &#34;aab&#34; p = &#34;c*a*b&#34;
+输出：true
+解释：因为 &#39;*&#39; 表示零个或多个，这里 &#39;c&#39; 为 0 个, &#39;a&#39; 被重复一次。因此可以匹配字符串 &#34;aab&#34;。
+示例 5：
+输入：s = &#34;mississippi&#34; p = &#34;mis*is*p*.&#34;
+输出：false
+提示：
+
+0 &lt;= s.length &lt;= 20
+0 &lt;= p.length &lt;= 30
+s 可能为空，且只包含从 a-z 的小写字母。
+p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 ``。
+保证每次出现字符 `` 时，前面都匹配到有效的字符
+">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LeetCode[10] 正则表达式匹配"/>
+<meta name="twitter:description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;字符串&rdquo;: https://leetcode.com/tag/string/ &ldquo;动态规划&rdquo;: https://leetcode.com/tag/dynamic-programming/ &ldquo;回溯算法&rdquo;: https://leetcode.com/tag/backtracking/ Similar Questions: &ldquo;通配符匹配&rdquo;: https://leetcode.com/problems/wildcard-matching/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 &#39;.&#39; 和 &#39;*&#39; 的正则表达式匹配。
+
+&#39;.&#39; 匹配任意单个字符
+&#39;*&#39; 匹配零个或多个前面的那一个元素
+
+所谓匹配，是要涵盖 整个字符串 s的，而不是部分字符串。
+示例 1：
+输入：s = &#34;aa&#34; p = &#34;a&#34;
+输出：false
+解释：&#34;a&#34; 无法匹配 &#34;aa&#34; 整个字符串。
+示例 2:
+输入：s = &#34;aa&#34; p = &#34;a*&#34;
+输出：true
+解释：因为 &#39;*&#39; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &#39;a&#39;。因此，字符串 &#34;aa&#34; 可被视为 &#39;a&#39; 重复了一次。
+示例 3：
+输入：s = &#34;ab&#34; p = &#34;.*&#34;
+输出：true
+解释：&#34;.*&#34; 表示可匹配零个或多个（&#39;*&#39;）任意字符（&#39;.&#39;）。
+示例 4：
+输入：s = &#34;aab&#34; p = &#34;c*a*b&#34;
+输出：true
+解释：因为 &#39;*&#39; 表示零个或多个，这里 &#39;c&#39; 为 0 个, &#39;a&#39; 被重复一次。因此可以匹配字符串 &#34;aab&#34;。
+示例 5：
+输入：s = &#34;mississippi&#34; p = &#34;mis*is*p*.&#34;
+输出：false
+提示：
+
+0 &lt;= s.length &lt;= 20
+0 &lt;= p.length &lt;= 30
+s 可能为空，且只包含从 a-z 的小写字母。
+p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 ``。
+保证每次出现字符 `` 时，前面都匹配到有效的字符
+"/>
+
+<meta property="og:title" content="LeetCode[10] 正则表达式匹配" />
+<meta property="og:description" content="
+  Related Topics:
+  
+    
+    Link to heading
+  
+
+&ldquo;字符串&rdquo;: https://leetcode.com/tag/string/ &ldquo;动态规划&rdquo;: https://leetcode.com/tag/dynamic-programming/ &ldquo;回溯算法&rdquo;: https://leetcode.com/tag/backtracking/ Similar Questions: &ldquo;通配符匹配&rdquo;: https://leetcode.com/problems/wildcard-matching/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 &#39;.&#39; 和 &#39;*&#39; 的正则表达式匹配。
+
+&#39;.&#39; 匹配任意单个字符
+&#39;*&#39; 匹配零个或多个前面的那一个元素
+
+所谓匹配，是要涵盖 整个字符串 s的，而不是部分字符串。
+示例 1：
+输入：s = &#34;aa&#34; p = &#34;a&#34;
+输出：false
+解释：&#34;a&#34; 无法匹配 &#34;aa&#34; 整个字符串。
+示例 2:
+输入：s = &#34;aa&#34; p = &#34;a*&#34;
+输出：true
+解释：因为 &#39;*&#39; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &#39;a&#39;。因此，字符串 &#34;aa&#34; 可被视为 &#39;a&#39; 重复了一次。
+示例 3：
+输入：s = &#34;ab&#34; p = &#34;.*&#34;
+输出：true
+解释：&#34;.*&#34; 表示可匹配零个或多个（&#39;*&#39;）任意字符（&#39;.&#39;）。
+示例 4：
+输入：s = &#34;aab&#34; p = &#34;c*a*b&#34;
+输出：true
+解释：因为 &#39;*&#39; 表示零个或多个，这里 &#39;c&#39; 为 0 个, &#39;a&#39; 被重复一次。因此可以匹配字符串 &#34;aab&#34;。
+示例 5：
+输入：s = &#34;mississippi&#34; p = &#34;mis*is*p*.&#34;
+输出：false
+提示：
+
+0 &lt;= s.length &lt;= 20
+0 &lt;= p.length &lt;= 30
+s 可能为空，且只包含从 a-z 的小写字母。
+p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 ``。
+保证每次出现字符 `` 时，前面都匹配到有效的字符
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://code.deqiang.wang/posts/leetcode10-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-30T14:29:45+00:00" />
+<meta property="article:modified_time" content="2021-03-30T14:29:45+00:00" />
+
+
+
+
+
+<link rel="canonical" href="http://code.deqiang.wang/posts/leetcode10-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.0fa2dc75ed1b76894ac0e062b10a6c4730daa745096fa120114b290ed8a48788.css" integrity="sha256-D6Lcde0bdolKwOBisQpsRzDap0UJb6EgEUspDtikh4g=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/avatar32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/avatar16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.85.0" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Code is poetry.
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">Categories</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">Tags</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://code.deqiang.wang/posts/leetcode10-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/">
+              LeetCode[10] 正则表达式匹配
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-03-30T14:29:45Z">
+                March 30, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/leetcode/">LeetCode</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h3 id="related-topics">
+  Related Topics:
+  <a class="heading-link" href="#related-topics">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>&ldquo;字符串&rdquo;: <a href="https://leetcode.com/tag/string/">https://leetcode.com/tag/string/</a> &ldquo;动态规划&rdquo;: <a href="https://leetcode.com/tag/dynamic-programming/">https://leetcode.com/tag/dynamic-programming/</a> &ldquo;回溯算法&rdquo;: <a href="https://leetcode.com/tag/backtracking/">https://leetcode.com/tag/backtracking/</a> Similar Questions: &ldquo;通配符匹配&rdquo;: <a href="https://leetcode.com/problems/wildcard-matching/">https://leetcode.com/problems/wildcard-matching/</a></p>
+<h3 id="problem">
+  Problem:
+  <a class="heading-link" href="#problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>给你一个字符串 <code>s</code> 和一个字符规律 <code>p</code>，请你来实现一个支持 <code>'.'</code> 和 <code>'*'</code> 的正则表达式匹配。</p>
+<ul>
+<li><code>'.'</code> 匹配任意单个字符</li>
+<li><code>'*'</code> 匹配零个或多个前面的那一个元素</li>
+</ul>
+<p>所谓匹配，是要涵盖 <strong>整个</strong>字符串 <code>s</code>的，而不是部分字符串。</p>
+<p><strong>示例 1：</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：s = &#34;aa&#34; p = &#34;a&#34;
+输出：false
+解释：&#34;a&#34; 无法匹配 &#34;aa&#34; 整个字符串。
+</code></pre></div><p><strong>示例 2:</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：s = &#34;aa&#34; p = &#34;a*&#34;
+输出：true
+解释：因为 &#39;*&#39; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &#39;a&#39;。因此，字符串 &#34;aa&#34; 可被视为 &#39;a&#39; 重复了一次。
+</code></pre></div><p><strong>示例 3：</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：s = &#34;ab&#34; p = &#34;.*&#34;
+输出：true
+解释：&#34;.*&#34; 表示可匹配零个或多个（&#39;*&#39;）任意字符（&#39;.&#39;）。
+</code></pre></div><p><strong>示例 4：</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：s = &#34;aab&#34; p = &#34;c*a*b&#34;
+输出：true
+解释：因为 &#39;*&#39; 表示零个或多个，这里 &#39;c&#39; 为 0 个, &#39;a&#39; 被重复一次。因此可以匹配字符串 &#34;aab&#34;。
+</code></pre></div><p><strong>示例 5：</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入：s = &#34;mississippi&#34; p = &#34;mis*is*p*.&#34;
+输出：false
+</code></pre></div><p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= s.length &lt;= 20</code></li>
+<li><code>0 &lt;= p.length &lt;= 30</code></li>
+<li><code>s</code> 可能为空，且只包含从 <code>a-z</code> 的小写字母。</li>
+<li><code>p</code> 可能为空，且只包含从 <code>a-z</code> 的小写字母，以及字符 <code>.</code> 和 ``。</li>
+<li>保证每次出现字符 `` 时，前面都匹配到有效的字符</li>
+</ul>
+<h3 id="solution">
+  Solution:
+  <a class="heading-link" href="#solution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><a href="https://leetcode-cn.com/problems/regular-expression-matching/solution/zheng-ze-biao-da-shi-pi-pei-by-leetcode-solution/">https://leetcode-cn.com/problems/regular-expression-matching/solution/zheng-ze-biao-da-shi-pi-pei-by-leetcode-solution/</a></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fb660a;font-weight:bold">class</span> Solution {
+<span style="color:#fb660a;font-weight:bold">public</span>:
+    <span style="color:#cdcaa9;font-weight:bold">bool</span> isMatch(string s, string p) {
+        <span style="color:#cdcaa9;font-weight:bold">int</span> sSize = <span style="color:#cdcaa9;font-weight:bold">int</span>(s.size());
+        <span style="color:#cdcaa9;font-weight:bold">int</span> pSize = <span style="color:#cdcaa9;font-weight:bold">int</span>(p.size());
+        <span style="color:#fb660a;font-weight:bold">if</span> (p.empty())
+        {
+            <span style="color:#fb660a;font-weight:bold">return</span> s.empty();
+        }
+        vector&lt;<span style="color:#cdcaa9;font-weight:bold">bool</span>&gt; tmpVec(pSize + <span style="color:#0086f7;font-weight:bold">1</span>, false);<span style="color:#080;background-color:#0f140f;font-style:italic">//dp大小应该比s，p的size大1
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>        vector&lt;vector&lt;<span style="color:#cdcaa9;font-weight:bold">bool</span>&gt;&gt; dp(sSize + <span style="color:#0086f7;font-weight:bold">1</span>, tmpVec); <span style="color:#080;background-color:#0f140f;font-style:italic">//dp[i][j] 表示 s 的前 i 个是否能被 p 的前 j 个匹配
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>        dp[<span style="color:#0086f7;font-weight:bold">0</span>][<span style="color:#0086f7;font-weight:bold">0</span>] = true;
+        <span style="color:#fb660a;font-weight:bold">if</span> (sSize != <span style="color:#0086f7;font-weight:bold">0</span> &amp;&amp; (p[<span style="color:#0086f7;font-weight:bold">0</span>] == s[<span style="color:#0086f7;font-weight:bold">0</span>] || p[<span style="color:#0086f7;font-weight:bold">0</span>] == <span style="color:#0086d2">&#39;.&#39;</span>))
+        {
+            dp[<span style="color:#0086f7;font-weight:bold">1</span>][<span style="color:#0086f7;font-weight:bold">1</span>] = true;
+        }
+        <span style="color:#fb660a;font-weight:bold">if</span> (p[<span style="color:#0086f7;font-weight:bold">0</span>] == <span style="color:#0086d2">&#39;*&#39;</span>)
+        {
+            dp[<span style="color:#0086f7;font-weight:bold">0</span>][<span style="color:#0086f7;font-weight:bold">1</span>] = true;
+        }
+        <span style="color:#080;background-color:#0f140f;font-style:italic">//初始化情况：s为空，p为.*.*的情况
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>        <span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> i = <span style="color:#0086f7;font-weight:bold">1</span>; i &lt; pSize; i++)
+        {
+            <span style="color:#fb660a;font-weight:bold">if</span> (p[i] == <span style="color:#0086d2">&#39;*&#39;</span> &amp;&amp; dp[<span style="color:#0086f7;font-weight:bold">0</span>][i - <span style="color:#0086f7;font-weight:bold">1</span>] == true)
+            {
+                dp[<span style="color:#0086f7;font-weight:bold">0</span>][i + <span style="color:#0086f7;font-weight:bold">1</span>] = true;
+            }
+        }
+
+        <span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> i = <span style="color:#0086f7;font-weight:bold">0</span>; i &lt; sSize; i++)
+        {
+            <span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> j = <span style="color:#0086f7;font-weight:bold">1</span>; j &lt; pSize; j++)
+            {
+                <span style="color:#fb660a;font-weight:bold">if</span> (p[j] == <span style="color:#0086d2">&#39;.&#39;</span> || p[j] == s[i])
+                { <span style="color:#080;background-color:#0f140f;font-style:italic">//如果是任意元素 或者是对于元素匹配
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>                    dp[i + <span style="color:#0086f7;font-weight:bold">1</span>][j + <span style="color:#0086f7;font-weight:bold">1</span>] = dp[i][j];
+                }
+                <span style="color:#fb660a;font-weight:bold">if</span> (p[j] == <span style="color:#0086d2">&#39;*&#39;</span>)
+                {
+                    <span style="color:#080;background-color:#0f140f;font-style:italic">//caa cb* -&gt; caa c
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>                    <span style="color:#fb660a;font-weight:bold">if</span> (p[j - <span style="color:#0086f7;font-weight:bold">1</span>] != s[i] &amp;&amp; p[j - <span style="color:#0086f7;font-weight:bold">1</span>] != <span style="color:#0086d2">&#39;.&#39;</span>)
+                    { <span style="color:#080;background-color:#0f140f;font-style:italic">//如果前一个元素不匹配 且不为任意元素
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>                        dp[i + <span style="color:#0086f7;font-weight:bold">1</span>][j + <span style="color:#0086f7;font-weight:bold">1</span>] = dp[i + <span style="color:#0086f7;font-weight:bold">1</span>][j - <span style="color:#0086f7;font-weight:bold">1</span>];
+                    }
+                    <span style="color:#fb660a;font-weight:bold">else</span>
+                    {
+                        <span style="color:#080;background-color:#0f140f;font-style:italic">//caa c.* -&gt; ca c.*
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>                        <span style="color:#080;background-color:#0f140f;font-style:italic">//caa ca* -&gt; ca ca*
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>                        <span style="color:#080;background-color:#0f140f;font-style:italic">//ca ca* -&gt; ca ca / c ca*
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>                        <span style="color:#080;background-color:#0f140f;font-style:italic">//ca ca*a* -&gt; ca ca*
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>                        dp[i + <span style="color:#0086f7;font-weight:bold">1</span>][j + <span style="color:#0086f7;font-weight:bold">1</span>] = (dp[i][j + <span style="color:#0086f7;font-weight:bold">1</span>] || dp[i + <span style="color:#0086f7;font-weight:bold">1</span>][j - <span style="color:#0086f7;font-weight:bold">1</span>]);<span style="color:#080;background-color:#0f140f;font-style:italic">// || dp[i + 1][j]不需要
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>                    }
+                }
+            }
+        }
+        <span style="color:#080;background-color:#0f140f;font-style:italic">//print(dp);
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>        <span style="color:#fb660a;font-weight:bold">return</span> dp[sSize][pSize];
+    }
+};
+</code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "code-rmsprdt3mn" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Francis 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.369d90111ae4409b4e51de5efd23a46b92663fcc82dc9a0efde7f70bffc3f949.js" integrity="sha256-Np2QERrkQJtOUd5e/SOka5JmP8yC3JoO/ef3C//D&#43;Uk="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  LeetCode[215] 数组中的第K个最大元素 · Code is poetry.
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Francis">
+<meta name="description" content="
+Related Topics:
+&ldquo;数组&rdquo;: https://leetcode.com/tag/array/
+&ldquo;分治&rdquo;: https://leetcode.com/tag/divide-and-conquer/
+&ldquo;快速选择&rdquo;: https://leetcode.com/tag/quickselect/
+&ldquo;排序&rdquo;: https://leetcode.com/tag/sorting/
+&ldquo;堆（优先队列）&quot;: https://leetcode.com/tag/heap-priority-queue/
+Similar Questions:
+&ldquo;摆动排序 II&rdquo;: https://leetcode.com/problems/wiggle-sort-ii/
+&ldquo;前 K 个高频元素&rdquo;: https://leetcode.com/problems/top-k-frequent-elements/
+&ldquo;第三大的数&rdquo;: https://leetcode.com/problems/third-maximum-number/
+&ldquo;数据流中的第 K 大元素&rdquo;: https://leetcode.com/problems/kth-largest-element-in-a-stream/
+&ldquo;最接近原点的 K 个点&rdquo;: https://leetcode.com/problems/k-closest-points-to-origin/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给定整数数组 nums 和整数 k，请返回数组中第 **k** 个最大的元素。
+请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+示例 1:
+输入: [3,2,1,5,6,4] 和 k = 2
+输出: 5
+示例 2:
+输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
+输出: 4
+提示：
+
+1 &lt;= k &lt;= nums.length &lt;= 104
+-104 &lt;= nums[i] &lt;= 104
+">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LeetCode[215] 数组中的第K个最大元素"/>
+<meta name="twitter:description" content="
+Related Topics:
+&ldquo;数组&rdquo;: https://leetcode.com/tag/array/
+&ldquo;分治&rdquo;: https://leetcode.com/tag/divide-and-conquer/
+&ldquo;快速选择&rdquo;: https://leetcode.com/tag/quickselect/
+&ldquo;排序&rdquo;: https://leetcode.com/tag/sorting/
+&ldquo;堆（优先队列）&quot;: https://leetcode.com/tag/heap-priority-queue/
+Similar Questions:
+&ldquo;摆动排序 II&rdquo;: https://leetcode.com/problems/wiggle-sort-ii/
+&ldquo;前 K 个高频元素&rdquo;: https://leetcode.com/problems/top-k-frequent-elements/
+&ldquo;第三大的数&rdquo;: https://leetcode.com/problems/third-maximum-number/
+&ldquo;数据流中的第 K 大元素&rdquo;: https://leetcode.com/problems/kth-largest-element-in-a-stream/
+&ldquo;最接近原点的 K 个点&rdquo;: https://leetcode.com/problems/k-closest-points-to-origin/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给定整数数组 nums 和整数 k，请返回数组中第 **k** 个最大的元素。
+请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+示例 1:
+输入: [3,2,1,5,6,4] 和 k = 2
+输出: 5
+示例 2:
+输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
+输出: 4
+提示：
+
+1 &lt;= k &lt;= nums.length &lt;= 104
+-104 &lt;= nums[i] &lt;= 104
+"/>
+
+<meta property="og:title" content="LeetCode[215] 数组中的第K个最大元素" />
+<meta property="og:description" content="
+Related Topics:
+&ldquo;数组&rdquo;: https://leetcode.com/tag/array/
+&ldquo;分治&rdquo;: https://leetcode.com/tag/divide-and-conquer/
+&ldquo;快速选择&rdquo;: https://leetcode.com/tag/quickselect/
+&ldquo;排序&rdquo;: https://leetcode.com/tag/sorting/
+&ldquo;堆（优先队列）&quot;: https://leetcode.com/tag/heap-priority-queue/
+Similar Questions:
+&ldquo;摆动排序 II&rdquo;: https://leetcode.com/problems/wiggle-sort-ii/
+&ldquo;前 K 个高频元素&rdquo;: https://leetcode.com/problems/top-k-frequent-elements/
+&ldquo;第三大的数&rdquo;: https://leetcode.com/problems/third-maximum-number/
+&ldquo;数据流中的第 K 大元素&rdquo;: https://leetcode.com/problems/kth-largest-element-in-a-stream/
+&ldquo;最接近原点的 K 个点&rdquo;: https://leetcode.com/problems/k-closest-points-to-origin/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+给定整数数组 nums 和整数 k，请返回数组中第 **k** 个最大的元素。
+请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+示例 1:
+输入: [3,2,1,5,6,4] 和 k = 2
+输出: 5
+示例 2:
+输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
+输出: 4
+提示：
+
+1 &lt;= k &lt;= nums.length &lt;= 104
+-104 &lt;= nums[i] &lt;= 104
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://code.deqiang.wang/posts/leetcode215-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-26T11:29:45+00:00" />
+<meta property="article:modified_time" content="2021-03-26T11:29:45+00:00" />
+
+
+
+
+
+<link rel="canonical" href="http://code.deqiang.wang/posts/leetcode215-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.0fa2dc75ed1b76894ac0e062b10a6c4730daa745096fa120114b290ed8a48788.css" integrity="sha256-D6Lcde0bdolKwOBisQpsRzDap0UJb6EgEUspDtikh4g=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/avatar32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/avatar16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.85.0" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Code is poetry.
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">Categories</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">Tags</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://code.deqiang.wang/posts/leetcode215-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/">
+              LeetCode[215] 数组中的第K个最大元素
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-03-26T11:29:45Z">
+                March 26, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/leetcode/">LeetCode</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/">堆排序</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <hr>
+<p>Related Topics:
+&ldquo;数组&rdquo;: <a href="https://leetcode.com/tag/array/">https://leetcode.com/tag/array/</a>
+&ldquo;分治&rdquo;: <a href="https://leetcode.com/tag/divide-and-conquer/">https://leetcode.com/tag/divide-and-conquer/</a>
+&ldquo;快速选择&rdquo;: <a href="https://leetcode.com/tag/quickselect/">https://leetcode.com/tag/quickselect/</a>
+&ldquo;排序&rdquo;: <a href="https://leetcode.com/tag/sorting/">https://leetcode.com/tag/sorting/</a>
+&ldquo;堆（优先队列）&quot;: <a href="https://leetcode.com/tag/heap-priority-queue/">https://leetcode.com/tag/heap-priority-queue/</a>
+Similar Questions:
+&ldquo;摆动排序 II&rdquo;: <a href="https://leetcode.com/problems/wiggle-sort-ii/">https://leetcode.com/problems/wiggle-sort-ii/</a>
+&ldquo;前 K 个高频元素&rdquo;: <a href="https://leetcode.com/problems/top-k-frequent-elements/">https://leetcode.com/problems/top-k-frequent-elements/</a>
+&ldquo;第三大的数&rdquo;: <a href="https://leetcode.com/problems/third-maximum-number/">https://leetcode.com/problems/third-maximum-number/</a>
+&ldquo;数据流中的第 K 大元素&rdquo;: <a href="https://leetcode.com/problems/kth-largest-element-in-a-stream/">https://leetcode.com/problems/kth-largest-element-in-a-stream/</a>
+&ldquo;最接近原点的 K 个点&rdquo;: <a href="https://leetcode.com/problems/k-closest-points-to-origin/">https://leetcode.com/problems/k-closest-points-to-origin/</a></p>
+<h3 id="problem">
+  Problem:
+  <a class="heading-link" href="#problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>给定整数数组 <code>nums</code> 和整数 <code>k</code>，请返回数组中第 <code>**k**</code> 个最大的元素。</p>
+<p>请注意，你需要找的是数组排序后的第 <code>k</code> 个最大的元素，而不是第 <code>k</code> 个不同的元素。</p>
+<p><strong>示例 1:</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入: [3,2,1,5,6,4] 和 k = 2
+输出: 5
+</code></pre></div><p><strong>示例 2:</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
+输出: 4
+</code></pre></div><p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= k &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+</ul>
+<h3 id="solution">
+  Solution:
+  <a class="heading-link" href="#solution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/shu-zu-zhong-de-di-kge-zui-da-yuan-su-by-leetcode-/">https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/shu-zu-zhong-de-di-kge-zui-da-yuan-su-by-leetcode-/</a></p>
+<p>方法一：基于快速排序的选择方法</p>
+<p>我们可以改进快速排序算法来解决这个问题：在分解的过程当中，我们会对子数组进行划分，如果划分得到的q 正好就是我们需要的下标，就直接返回a[q]；否则，如果 q 比目标下标小，就递归右子区间，否则递归左子区间。这样就可以把原来递归两个区间变成只递归一个区间，提高了时间效率。这就是「快速选择」算法。</p>
+<p>我们知道快速排序的性能和「划分」出的子数组的长度密切相关。直观地理解如果每次规模为 n 的问题我们都划分成 1 和 n−1，每次递归的时候又向 n−1 的集合中递归，这种情况是最坏的，时间代价是 O(n 2)。我们可以引入随机化来加速这个过程，它的时间代价的期望是 O(n)，证明过程可以参考「《算法导论》9.2：期望为线性的选择算法」。</p>
+<p>方法二：基于堆排序的选择方法</p>
+<p>思路和算法</p>
+<p>我们也可以使用堆排序来解决这个问题——建立一个大根堆，做 k−1 次删除操作后堆顶元素就是我们要找的答案。在很多语言中，都有优先队列或者堆的的容器可以直接使用，但是在面试中，面试官更倾向于让更面试者自己实现一个堆。所以建议读者掌握这里大根堆的实现方法，在这道题中尤其要搞懂「建堆」、「调整」和「删除」的过程。</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#080;background-color:#0f140f;font-style:italic">/*
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"> * @lc app=leetcode.cn id=215 lang=cpp
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"> *
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"> * [215] 数组中的第K个最大元素
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"> */</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic">// @lc code=start
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//基于快速排序的选择方法
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">// class Solution {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">// public:
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//     int quickSelect(vector&lt;int&gt;&amp; a, int l, int r, int index) {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         int q = randomPartition(a, l, r);
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         if (q == index) {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//             return a[q];
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         } else {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//             return q &lt; index ? quickSelect(a, q + 1, r, index) : quickSelect(a, l, q - 1, index);
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//     }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">//     inline int randomPartition(vector&lt;int&gt;&amp; a, int l, int r) {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         int i = rand() % (r - l + 1) + l;
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         swap(a[i], a[r]);
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         return partition(a, l, r);
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//     }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">//     inline int partition(vector&lt;int&gt;&amp; a, int l, int r) {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         int x = a[r], i = l - 1;
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         for (int j = l; j &lt; r; ++j) {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//             if (a[j] &lt;= x) {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//                 swap(a[++i], a[j]);
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//             }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         swap(a[i + 1], a[r]);
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         return i + 1;
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//     }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">//     int findKthLargest(vector&lt;int&gt;&amp; nums, int k) {
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         srand(time(0));
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//         return quickSelect(nums, 0, nums.size() - 1, nums.size() - k);
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">//     }
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">// };
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">// 基于堆排序的选择方法
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#fb660a;font-weight:bold">class</span> Solution {
+<span style="color:#fb660a;font-weight:bold">public</span>:
+    <span style="color:#cdcaa9;font-weight:bold">void</span> maxHeapify(vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt;&amp; a, <span style="color:#cdcaa9;font-weight:bold">int</span> i, <span style="color:#cdcaa9;font-weight:bold">int</span> heapSize) {
+        <span style="color:#cdcaa9;font-weight:bold">int</span> l = i * <span style="color:#0086f7;font-weight:bold">2</span> + <span style="color:#0086f7;font-weight:bold">1</span>, r = i * <span style="color:#0086f7;font-weight:bold">2</span> + <span style="color:#0086f7;font-weight:bold">2</span>, largest = i;
+        <span style="color:#fb660a;font-weight:bold">if</span> (l &lt; heapSize &amp;&amp; a[l] &gt; a[largest]) {
+            largest = l;
+        } 
+        <span style="color:#fb660a;font-weight:bold">if</span> (r &lt; heapSize &amp;&amp; a[r] &gt; a[largest]) {
+            largest = r;
+        }
+        <span style="color:#fb660a;font-weight:bold">if</span> (largest != i) {
+            swap(a[i], a[largest]);
+            maxHeapify(a, largest, heapSize);
+        }
+    }
+
+    <span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">buildMaxHeap</span>(vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt;&amp; a, <span style="color:#cdcaa9;font-weight:bold">int</span> heapSize) {
+        <span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> i = heapSize / <span style="color:#0086f7;font-weight:bold">2</span>; i &gt;= <span style="color:#0086f7;font-weight:bold">0</span>; --i) {
+            maxHeapify(a, i, heapSize);
+        } 
+    }
+
+    <span style="color:#cdcaa9;font-weight:bold">int</span> <span style="color:#ff0086;font-weight:bold">findKthLargest</span>(vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt;&amp; nums, <span style="color:#cdcaa9;font-weight:bold">int</span> k) {
+        <span style="color:#cdcaa9;font-weight:bold">int</span> heapSize = nums.size();
+        buildMaxHeap(nums, heapSize);
+        <span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> i = nums.size() - <span style="color:#0086f7;font-weight:bold">1</span>; i &gt;= nums.size() - k + <span style="color:#0086f7;font-weight:bold">1</span>; --i) {
+            swap(nums[<span style="color:#0086f7;font-weight:bold">0</span>], nums[i]);
+            --heapSize;
+            maxHeapify(nums, <span style="color:#0086f7;font-weight:bold">0</span>, heapSize);
+        }
+        <span style="color:#fb660a;font-weight:bold">return</span> nums[<span style="color:#0086f7;font-weight:bold">0</span>];
+    }
+};
+<span style="color:#080;background-color:#0f140f;font-style:italic">// @lc code=end
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>
+
+</code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "code-rmsprdt3mn" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Francis 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.369d90111ae4409b4e51de5efd23a46b92663fcc82dc9a0efde7f70bffc3f949.js" integrity="sha256-Np2QERrkQJtOUd5e/SOka5JmP8yC3JoO/ef3C//D&#43;Uk="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

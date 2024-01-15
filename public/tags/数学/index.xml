@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数学 on Code is poetry.</title>
+    <link>http://code.deqiang.wang/tags/%E6%95%B0%E5%AD%A6/</link>
+    <description>Recent content in 数学 on Code is poetry.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 09 Apr 2021 11:29:45 +0000</lastBuildDate><atom:link href="http://code.deqiang.wang/tags/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode[13] 罗马数字转整数</title>
+      <link>http://code.deqiang.wang/posts/leetcode13-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</link>
+      <pubDate>Fri, 09 Apr 2021 11:29:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode13-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数学&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/math/&#34;&gt;https://leetcode.com/tag/math/&lt;/a&gt; &amp;ldquo;字符串&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/string/&#34;&gt;https://leetcode.com/tag/string/&lt;/a&gt; Similar Questions: &amp;ldquo;整数转罗马数字&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/integer-to-roman/&#34;&gt;https://leetcode.com/problems/integer-to-roman/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;罗马数字包含以下七种字符: &lt;code&gt;I&lt;/code&gt;， &lt;code&gt;V&lt;/code&gt;， &lt;code&gt;X&lt;/code&gt;， &lt;code&gt;L&lt;/code&gt;，&lt;code&gt;C&lt;/code&gt;，&lt;code&gt;D&lt;/code&gt; 和 &lt;code&gt;M&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;字符          数值
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;例如， 罗马数字 2 写做 &lt;code&gt;II&lt;/code&gt; ，即为两个并列的 1。12 写做 &lt;code&gt;XII&lt;/code&gt; ，即为 &lt;code&gt;X&lt;/code&gt; + &lt;code&gt;II&lt;/code&gt; 。 27 写做 &lt;code&gt;XXVII&lt;/code&gt;, 即为 &lt;code&gt;XX&lt;/code&gt; + &lt;code&gt;V&lt;/code&gt; + &lt;code&gt;II&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 &lt;code&gt;IIII&lt;/code&gt;，而是 &lt;code&gt;IV&lt;/code&gt;。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 &lt;code&gt;IX&lt;/code&gt;。这个特殊的规则只适用于以下六种情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;I&lt;/code&gt; 可以放在 &lt;code&gt;V&lt;/code&gt; (5) 和 &lt;code&gt;X&lt;/code&gt; (10) 的左边，来表示 4 和 9。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;X&lt;/code&gt; 可以放在 &lt;code&gt;L&lt;/code&gt; (50) 和 &lt;code&gt;C&lt;/code&gt; (100) 的左边，来表示 40 和 90。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C&lt;/code&gt; 可以放在 &lt;code&gt;D&lt;/code&gt; (500) 和 &lt;code&gt;M&lt;/code&gt; (1000) 的左边，来表示 400 和 900。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: &amp;#34;III&amp;#34;
+输出: 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: &amp;#34;IV&amp;#34;
+输出: 4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: &amp;#34;IX&amp;#34;
+输出: 9
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 4:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: &amp;#34;LVIII&amp;#34;
+输出: 58
+解释: L = 50, V= 5, III = 3.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 5:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: &amp;#34;MCMXCIV&amp;#34;
+输出: 1994
+解释: M = 1000, CM = 900, XC = 90, IV = 4.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= s.length &amp;lt;= 15&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt; 仅含字符 &lt;code&gt;(&#39;I&#39;, &#39;V&#39;, &#39;X&#39;, &#39;L&#39;, &#39;C&#39;, &#39;D&#39;, &#39;M&#39;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;题目数据保证 &lt;code&gt;s&lt;/code&gt; 是一个有效的罗马数字，且表示整数在范围 &lt;code&gt;[1, 3999]&lt;/code&gt; 内&lt;/li&gt;
+&lt;li&gt;题目所给测试用例皆符合罗马数字书写规则，不会出现跨位等情况。&lt;/li&gt;
+&lt;li&gt;IL 和 IM 这样的例子并不符合题目要求，49 应该写作 XLIX，999 应该写作 CMXCIX 。&lt;/li&gt;
+&lt;li&gt;关于罗马数字的详尽书写规则，可以参考 &lt;a href=&#34;https://b2b.partcommunity.com/community/knowledge/zh_CN/detail/10753/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97#knowledge_article&#34;&gt;罗马数字 - Mathematics&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[12] 整数转罗马数字</title>
+      <link>http://code.deqiang.wang/posts/leetcode12-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Thu, 08 Apr 2021 11:29:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode12-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数学&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/math/&#34;&gt;https://leetcode.com/tag/math/&lt;/a&gt; &amp;ldquo;字符串&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/string/&#34;&gt;https://leetcode.com/tag/string/&lt;/a&gt; Similar Questions: &amp;ldquo;罗马数字转整数&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/roman-to-integer/&#34;&gt;https://leetcode.com/problems/roman-to-integer/&lt;/a&gt; &amp;ldquo;整数转换英文表示&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/integer-to-english-words/&#34;&gt;https://leetcode.com/problems/integer-to-english-words/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;罗马数字包含以下七种字符： &lt;code&gt;I&lt;/code&gt;， &lt;code&gt;V&lt;/code&gt;， &lt;code&gt;X&lt;/code&gt;， &lt;code&gt;L&lt;/code&gt;，&lt;code&gt;C&lt;/code&gt;，&lt;code&gt;D&lt;/code&gt; 和 &lt;code&gt;M&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;字符          数值
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;例如， 罗马数字 2 写做 &lt;code&gt;II&lt;/code&gt; ，即为两个并列的 1。12 写做 &lt;code&gt;XII&lt;/code&gt; ，即为 &lt;code&gt;X&lt;/code&gt; + &lt;code&gt;II&lt;/code&gt; 。 27 写做 &lt;code&gt;XXVII&lt;/code&gt;, 即为 &lt;code&gt;XX&lt;/code&gt; + &lt;code&gt;V&lt;/code&gt; + &lt;code&gt;II&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 &lt;code&gt;IIII&lt;/code&gt;，而是 &lt;code&gt;IV&lt;/code&gt;。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 &lt;code&gt;IX&lt;/code&gt;。这个特殊的规则只适用于以下六种情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;I&lt;/code&gt; 可以放在 &lt;code&gt;V&lt;/code&gt; (5) 和 &lt;code&gt;X&lt;/code&gt; (10) 的左边，来表示 4 和 9。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;X&lt;/code&gt; 可以放在 &lt;code&gt;L&lt;/code&gt; (50) 和 &lt;code&gt;C&lt;/code&gt; (100) 的左边，来表示 40 和 90。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C&lt;/code&gt; 可以放在 &lt;code&gt;D&lt;/code&gt; (500) 和 &lt;code&gt;M&lt;/code&gt; (1000) 的左边，来表示 400 和 900。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: 3
+输出: &amp;#34;III&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: 4
+输出: &amp;#34;IV&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: 9
+输出: &amp;#34;IX&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 4:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: 58
+输出: &amp;#34;LVIII&amp;#34;
+解释: L = 50, V = 5, III = 3.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 5:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: 1994
+输出: &amp;#34;MCMXCIV&amp;#34;
+解释: M = 1000, CM = 900, XC = 90, IV = 4.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= num &amp;lt;= 3999&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[7] 整数反转</title>
+      <link>http://code.deqiang.wang/posts/leetcode7-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</link>
+      <pubDate>Mon, 29 Mar 2021 12:22:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode7-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数学&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/math/&#34;&gt;https://leetcode.com/tag/math/&lt;/a&gt; Similar Questions: &amp;ldquo;字符串转换整数 (atoi)&amp;quot;: &lt;a href=&#34;https://leetcode.com/problems/string-to-integer-atoi/&#34;&gt;https://leetcode.com/problems/string-to-integer-atoi/&lt;/a&gt; &amp;ldquo;颠倒二进制位&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/reverse-bits/&#34;&gt;https://leetcode.com/problems/reverse-bits/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你一个 32 位的有符号整数 &lt;code&gt;x&lt;/code&gt; ，返回将 &lt;code&gt;x&lt;/code&gt; 中的数字部分反转后的结果。&lt;/p&gt;
+&lt;p&gt;如果反转后整数超过 32 位的有符号整数的范围 &lt;code&gt;[−231, 231 − 1]&lt;/code&gt; ，就返回 0。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;假设环境不允许存储 64 位整数（有符号或无符号）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：x = 123
+输出：321
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：x = -123
+输出：-321
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：x = 120
+输出：21
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 4：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：x = 0
+输出：0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;231 &amp;lt;= x &amp;lt;= 231 - 1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[9] 回文数</title>
+      <link>http://code.deqiang.wang/posts/leetcode9-%E5%9B%9E%E6%96%87%E6%95%B0/</link>
+      <pubDate>Fri, 19 Mar 2021 14:29:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode9-%E5%9B%9E%E6%96%87%E6%95%B0/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数学&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/math/&#34;&gt;https://leetcode.com/tag/math/&lt;/a&gt; Similar Questions: &amp;ldquo;回文链表&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/palindrome-linked-list/&#34;&gt;https://leetcode.com/problems/palindrome-linked-list/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你一个整数 &lt;code&gt;x&lt;/code&gt; ，如果 &lt;code&gt;x&lt;/code&gt; 是一个回文整数，返回 &lt;code&gt;true&lt;/code&gt; ；否则，返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，&lt;code&gt;121&lt;/code&gt; 是回文，而 &lt;code&gt;123&lt;/code&gt; 不是。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：x = 121
+输出：true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：x = -121
+输出：false
+解释：从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：x = 10
+输出：false
+解释：从右向左读, 为 01 。因此它不是一个回文数。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 4：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：x = -101
+输出：false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;231 &amp;lt;= x &amp;lt;= 231 - 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;*进阶：**你能不将整数转为字符串来解决这个问题吗？&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

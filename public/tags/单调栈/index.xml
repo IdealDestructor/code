@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>单调栈 on Code is poetry.</title>
+    <link>http://code.deqiang.wang/tags/%E5%8D%95%E8%B0%83%E6%A0%88/</link>
+    <description>Recent content in 单调栈 on Code is poetry.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Dec 2021 17:05:45 +0000</lastBuildDate><atom:link href="http://code.deqiang.wang/tags/%E5%8D%95%E8%B0%83%E6%A0%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode[496] 下一个更大元素 I</title>
+      <link>http://code.deqiang.wang/posts/leetcode496-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0-i/</link>
+      <pubDate>Fri, 10 Dec 2021 17:05:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode496-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0-i/</guid>
+      <description>&lt;p&gt;Related Topics:
+&amp;ldquo;栈&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/stack/&#34;&gt;https://leetcode.com/tag/stack/&lt;/a&gt;
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;哈希表&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/hash-table/&#34;&gt;https://leetcode.com/tag/hash-table/&lt;/a&gt;
+&amp;ldquo;单调栈&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/monotonic-stack/&#34;&gt;https://leetcode.com/tag/monotonic-stack/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;下一个更大元素 II&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/next-greater-element-ii/&#34;&gt;https://leetcode.com/problems/next-greater-element-ii/&lt;/a&gt;
+&amp;ldquo;下一个更大元素 III&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/next-greater-element-iii/&#34;&gt;https://leetcode.com/problems/next-greater-element-iii/&lt;/a&gt;
+&amp;ldquo;每日温度&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/daily-temperatures/&#34;&gt;https://leetcode.com/problems/daily-temperatures/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你两个&lt;strong&gt;没有重复元素&lt;/strong&gt; 的数组 &lt;code&gt;nums1&lt;/code&gt; 和 &lt;code&gt;nums2&lt;/code&gt; ，其中&lt;code&gt;nums1&lt;/code&gt; 是 &lt;code&gt;nums2&lt;/code&gt; 的子集。&lt;/p&gt;
+&lt;p&gt;请你找出 &lt;code&gt;nums1&lt;/code&gt; 中每个元素在 &lt;code&gt;nums2&lt;/code&gt; 中的下一个比其大的值。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nums1&lt;/code&gt; 中数字 &lt;code&gt;x&lt;/code&gt; 的下一个更大元素是指 &lt;code&gt;x&lt;/code&gt; 在 &lt;code&gt;nums2&lt;/code&gt; 中对应位置的右边的第一个比 &lt;code&gt;x&lt;/code&gt;大的元素。如果不存在，对应位置输出 &lt;code&gt;-1&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: nums1 = [4,1,2], nums2 = [1,3,4,2].
+输出: [-1,3,-1]
+解释:
+    对于 num1 中的数字 4 ，你无法在第二个数组中找到下一个更大的数字，因此输出 -1 。
+    对于 num1 中的数字 1 ，第二个数组中数字1右边的下一个较大数字是 3 。
+    对于 num1 中的数字 2 ，第二个数组中没有下一个更大的数字，因此输出 -1 。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: nums1 = [2,4], nums2 = [1,2,3,4].
+输出: [3,-1]
+解释:
+    对于 num1 中的数字 2 ，第二个数组中的下一个较大数字是 3 。
+    对于 num1 中的数字 4 ，第二个数组中没有下一个更大的数字，因此输出 -1 。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums1.length &amp;lt;= nums2.length &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= nums1[i], nums2[i] &amp;lt;= 104&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nums1&lt;/code&gt;和&lt;code&gt;nums2&lt;/code&gt;中所有整数 &lt;strong&gt;互不相同&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nums1&lt;/code&gt; 中的所有整数同样出现在 &lt;code&gt;nums2&lt;/code&gt; 中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;**进阶：**你可以设计一个时间复杂度为 &lt;code&gt;O(nums1.length + nums2.length)&lt;/code&gt; 的解决方案吗？&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

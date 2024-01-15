@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  剑指Offer[51] 数组中的逆序对 · Code is poetry.
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Francis">
+<meta name="description" content="Related Topics:
+&ldquo;树状数组&rdquo;: https://leetcode.com/tag/binary-indexed-tree/
+&ldquo;线段树&rdquo;: https://leetcode.com/tag/segment-tree/
+&ldquo;数组&rdquo;: https://leetcode.com/tag/array/
+&ldquo;二分查找&rdquo;: https://leetcode.com/tag/binary-search/
+&ldquo;分治&rdquo;: https://leetcode.com/tag/divide-and-conquer/
+&ldquo;有序集合&rdquo;: https://leetcode.com/tag/ordered-set/
+&ldquo;归并排序&rdquo;: https://leetcode.com/tag/merge-sort/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
+示例 1:
+输入: [7,5,6,4]
+输出: 5
+限制：
+`0 &lt;= 数组长度 &lt;= 50000">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="剑指Offer[51] 数组中的逆序对"/>
+<meta name="twitter:description" content="Related Topics:
+&ldquo;树状数组&rdquo;: https://leetcode.com/tag/binary-indexed-tree/
+&ldquo;线段树&rdquo;: https://leetcode.com/tag/segment-tree/
+&ldquo;数组&rdquo;: https://leetcode.com/tag/array/
+&ldquo;二分查找&rdquo;: https://leetcode.com/tag/binary-search/
+&ldquo;分治&rdquo;: https://leetcode.com/tag/divide-and-conquer/
+&ldquo;有序集合&rdquo;: https://leetcode.com/tag/ordered-set/
+&ldquo;归并排序&rdquo;: https://leetcode.com/tag/merge-sort/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
+示例 1:
+输入: [7,5,6,4]
+输出: 5
+限制：
+`0 &lt;= 数组长度 &lt;= 50000"/>
+
+<meta property="og:title" content="剑指Offer[51] 数组中的逆序对" />
+<meta property="og:description" content="Related Topics:
+&ldquo;树状数组&rdquo;: https://leetcode.com/tag/binary-indexed-tree/
+&ldquo;线段树&rdquo;: https://leetcode.com/tag/segment-tree/
+&ldquo;数组&rdquo;: https://leetcode.com/tag/array/
+&ldquo;二分查找&rdquo;: https://leetcode.com/tag/binary-search/
+&ldquo;分治&rdquo;: https://leetcode.com/tag/divide-and-conquer/
+&ldquo;有序集合&rdquo;: https://leetcode.com/tag/ordered-set/
+&ldquo;归并排序&rdquo;: https://leetcode.com/tag/merge-sort/
+
+  Problem:
+  
+    
+    Link to heading
+  
+
+在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
+示例 1:
+输入: [7,5,6,4]
+输出: 5
+限制：
+`0 &lt;= 数组长度 &lt;= 50000" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://code.deqiang.wang/posts/%E5%89%91%E6%8C%87offer51-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-11T14:22:35+00:00" />
+<meta property="article:modified_time" content="2021-12-11T14:22:35+00:00" />
+
+
+
+
+
+<link rel="canonical" href="http://code.deqiang.wang/posts/%E5%89%91%E6%8C%87offer51-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.0fa2dc75ed1b76894ac0e062b10a6c4730daa745096fa120114b290ed8a48788.css" integrity="sha256-D6Lcde0bdolKwOBisQpsRzDap0UJb6EgEUspDtikh4g=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/avatar32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/avatar16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.85.0" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Code is poetry.
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">Categories</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">Tags</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://code.deqiang.wang/posts/%E5%89%91%E6%8C%87offer51-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/">
+              剑指Offer[51] 数组中的逆序对
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-12-11T14:22:35Z">
+                December 11, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/%E5%89%91%E6%8C%87offer/">剑指offer</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">归并排序</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Related Topics:
+&ldquo;树状数组&rdquo;: <a href="https://leetcode.com/tag/binary-indexed-tree/">https://leetcode.com/tag/binary-indexed-tree/</a>
+&ldquo;线段树&rdquo;: <a href="https://leetcode.com/tag/segment-tree/">https://leetcode.com/tag/segment-tree/</a>
+&ldquo;数组&rdquo;: <a href="https://leetcode.com/tag/array/">https://leetcode.com/tag/array/</a>
+&ldquo;二分查找&rdquo;: <a href="https://leetcode.com/tag/binary-search/">https://leetcode.com/tag/binary-search/</a>
+&ldquo;分治&rdquo;: <a href="https://leetcode.com/tag/divide-and-conquer/">https://leetcode.com/tag/divide-and-conquer/</a>
+&ldquo;有序集合&rdquo;: <a href="https://leetcode.com/tag/ordered-set/">https://leetcode.com/tag/ordered-set/</a>
+&ldquo;归并排序&rdquo;: <a href="https://leetcode.com/tag/merge-sort/">https://leetcode.com/tag/merge-sort/</a></p>
+<h3 id="problem">
+  Problem:
+  <a class="heading-link" href="#problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。</p>
+<p><strong>示例 1:</strong></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">输入: [7,5,6,4]
+输出: 5
+</code></pre></div><p><strong>限制：</strong></p>
+<p>`0 &lt;= 数组长度 &lt;= 50000</p>
+<h3 id="solution">
+  Solution:
+  <a class="heading-link" href="#solution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><a href="https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/solution/shu-zu-zhong-de-ni-xu-dui-by-leetcode-solution/">https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/solution/shu-zu-zhong-de-ni-xu-dui-by-leetcode-solution/</a></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#fb660a;font-weight:bold">class</span> Solution {
+<span style="color:#fb660a;font-weight:bold">public</span>:
+    <span style="color:#cdcaa9;font-weight:bold">int</span> mergeSort(vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt;&amp; nums, vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt;&amp; tmp, <span style="color:#cdcaa9;font-weight:bold">int</span> l, <span style="color:#cdcaa9;font-weight:bold">int</span> r) {
+        <span style="color:#fb660a;font-weight:bold">if</span> (l &gt;= r) {
+            <span style="color:#fb660a;font-weight:bold">return</span> <span style="color:#0086f7;font-weight:bold">0</span>;
+        }
+
+        <span style="color:#cdcaa9;font-weight:bold">int</span> mid = (l + r) / <span style="color:#0086f7;font-weight:bold">2</span>;
+        <span style="color:#cdcaa9;font-weight:bold">int</span> inv_count = mergeSort(nums, tmp, l, mid) + mergeSort(nums, tmp, mid + <span style="color:#0086f7;font-weight:bold">1</span>, r);
+        <span style="color:#cdcaa9;font-weight:bold">int</span> i = l, j = mid + <span style="color:#0086f7;font-weight:bold">1</span>, pos = l;
+        <span style="color:#fb660a;font-weight:bold">while</span> (i &lt;= mid &amp;&amp; j &lt;= r) {
+            <span style="color:#fb660a;font-weight:bold">if</span> (nums[i] &lt;= nums[j]) {
+                tmp[pos] = nums[i];
+                ++i;
+                inv_count += (j - (mid + <span style="color:#0086f7;font-weight:bold">1</span>));
+            }
+            <span style="color:#fb660a;font-weight:bold">else</span> {
+                tmp[pos] = nums[j];
+                ++j;
+            }
+            ++pos;
+        }
+        <span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> k = i; k &lt;= mid; ++k) {
+            tmp[pos++] = nums[k];
+            inv_count += (j - (mid + <span style="color:#0086f7;font-weight:bold">1</span>));
+        }
+        <span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> k = j; k &lt;= r; ++k) {
+            tmp[pos++] = nums[k];
+        }
+        copy(tmp.begin() + l, tmp.begin() + r + <span style="color:#0086f7;font-weight:bold">1</span>, nums.begin() + l);
+        <span style="color:#fb660a;font-weight:bold">return</span> inv_count;
+    }
+
+    <span style="color:#cdcaa9;font-weight:bold">int</span> <span style="color:#ff0086;font-weight:bold">reversePairs</span>(vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt;&amp; nums) {
+        <span style="color:#cdcaa9;font-weight:bold">int</span> n = nums.size();
+        vector&lt;<span style="color:#cdcaa9;font-weight:bold">int</span>&gt; tmp(n);
+        <span style="color:#fb660a;font-weight:bold">return</span> mergeSort(nums, tmp, <span style="color:#0086f7;font-weight:bold">0</span>, n - <span style="color:#0086f7;font-weight:bold">1</span>);
+    }
+};
+</code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "code-rmsprdt3mn" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Francis 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.369d90111ae4409b4e51de5efd23a46b92663fcc82dc9a0efde7f70bffc3f949.js" integrity="sha256-Np2QERrkQJtOUd5e/SOka5JmP8yC3JoO/ef3C//D&#43;Uk="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

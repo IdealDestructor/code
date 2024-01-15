@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>剑指offer on Code is poetry.</title>
+    <link>http://code.deqiang.wang/categories/%E5%89%91%E6%8C%87offer/</link>
+    <description>Recent content in 剑指offer on Code is poetry.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Dec 2021 14:22:35 +0000</lastBuildDate><atom:link href="http://code.deqiang.wang/categories/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer[51] 数组中的逆序对</title>
+      <link>http://code.deqiang.wang/posts/%E5%89%91%E6%8C%87offer51-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/</link>
+      <pubDate>Sat, 11 Dec 2021 14:22:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/%E5%89%91%E6%8C%87offer51-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/</guid>
+      <description>&lt;p&gt;Related Topics:
+&amp;ldquo;树状数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/binary-indexed-tree/&#34;&gt;https://leetcode.com/tag/binary-indexed-tree/&lt;/a&gt;
+&amp;ldquo;线段树&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/segment-tree/&#34;&gt;https://leetcode.com/tag/segment-tree/&lt;/a&gt;
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;二分查找&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/binary-search/&#34;&gt;https://leetcode.com/tag/binary-search/&lt;/a&gt;
+&amp;ldquo;分治&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/divide-and-conquer/&#34;&gt;https://leetcode.com/tag/divide-and-conquer/&lt;/a&gt;
+&amp;ldquo;有序集合&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/ordered-set/&#34;&gt;https://leetcode.com/tag/ordered-set/&lt;/a&gt;
+&amp;ldquo;归并排序&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/merge-sort/&#34;&gt;https://leetcode.com/tag/merge-sort/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: [7,5,6,4]
+输出: 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;限制：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;`0 &amp;lt;= 数组长度 &amp;lt;= 50000&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>剑指Offer[03] 数组中重复的数字</title>
+      <link>http://code.deqiang.wang/posts/%E5%89%91%E6%8C%87offer03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Thu, 11 Mar 2021 14:22:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/%E5%89%91%E6%8C%87offer03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;哈希表&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/hash-table/&#34;&gt;https://leetcode.com/tag/hash-table/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;找出数组中重复的数字。&lt;/p&gt;
+&lt;p&gt;在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：
+[2, 3, 1, 0, 2, 5, 3]
+输出：2 或 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;限制：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;2 &amp;lt;= n &amp;lt;= 100000&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  CSP 2018-9-2 买菜 · Code is poetry.
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Francis">
+<meta name="description" content="问题描述
+　　小H和小W来到了一条街上，两人分开买菜，他们买菜的过程可以描述为，去店里买一些菜然后去旁边的一个广场把菜装上车，两人都要买n种菜，所以也都要装n次车。具体的，对于小H来说有n个不相交的时间段[a1,b1],[a2,b2]&hellip;[an,bn]在装车，对于小W来说有n个不相交的时间段[c1,d1],[c2,d2]&hellip;[cn,dn]在装车。其中，一个时间段[s, t]表示的是从时刻s到时刻t这段时间，时长为t-s。
+　　由于他们是好朋友，他们都在广场上装车的时候会聊天，他们想知道他们可以聊多长时间。
+输入格式
+　　输入的第一行包含一个正整数n，表示时间段的数量。
+　　接下来n行每行两个数ai，bi，描述小H的各个装车的时间段。
+　　接下来n行每行两个数ci，di，描述小W的各个装车的时间段。
+输出格式
+　　输出一行，一个正整数，表示两人可以聊多长时间。
+样例输入
+4
+1 3
+5 6
+9 13
+14 15
+2 4
+5 7
+10 11
+13 14
+样例输出
+3
+数据规模和约定
+　　对于所有的评测用例，1 ≤ n ≤ 2000, ai &lt; bi &lt; ai&#43;1，ci &lt; di &lt; ci&#43;1,对于所有的i(1 ≤ i ≤ n)有，1 ≤ ai, bi, ci, di ≤ 1000000。">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSP 2018-9-2 买菜"/>
+<meta name="twitter:description" content="问题描述
+　　小H和小W来到了一条街上，两人分开买菜，他们买菜的过程可以描述为，去店里买一些菜然后去旁边的一个广场把菜装上车，两人都要买n种菜，所以也都要装n次车。具体的，对于小H来说有n个不相交的时间段[a1,b1],[a2,b2]&hellip;[an,bn]在装车，对于小W来说有n个不相交的时间段[c1,d1],[c2,d2]&hellip;[cn,dn]在装车。其中，一个时间段[s, t]表示的是从时刻s到时刻t这段时间，时长为t-s。
+　　由于他们是好朋友，他们都在广场上装车的时候会聊天，他们想知道他们可以聊多长时间。
+输入格式
+　　输入的第一行包含一个正整数n，表示时间段的数量。
+　　接下来n行每行两个数ai，bi，描述小H的各个装车的时间段。
+　　接下来n行每行两个数ci，di，描述小W的各个装车的时间段。
+输出格式
+　　输出一行，一个正整数，表示两人可以聊多长时间。
+样例输入
+4
+1 3
+5 6
+9 13
+14 15
+2 4
+5 7
+10 11
+13 14
+样例输出
+3
+数据规模和约定
+　　对于所有的评测用例，1 ≤ n ≤ 2000, ai &lt; bi &lt; ai&#43;1，ci &lt; di &lt; ci&#43;1,对于所有的i(1 ≤ i ≤ n)有，1 ≤ ai, bi, ci, di ≤ 1000000。"/>
+
+<meta property="og:title" content="CSP 2018-9-2 买菜" />
+<meta property="og:description" content="问题描述
+　　小H和小W来到了一条街上，两人分开买菜，他们买菜的过程可以描述为，去店里买一些菜然后去旁边的一个广场把菜装上车，两人都要买n种菜，所以也都要装n次车。具体的，对于小H来说有n个不相交的时间段[a1,b1],[a2,b2]&hellip;[an,bn]在装车，对于小W来说有n个不相交的时间段[c1,d1],[c2,d2]&hellip;[cn,dn]在装车。其中，一个时间段[s, t]表示的是从时刻s到时刻t这段时间，时长为t-s。
+　　由于他们是好朋友，他们都在广场上装车的时候会聊天，他们想知道他们可以聊多长时间。
+输入格式
+　　输入的第一行包含一个正整数n，表示时间段的数量。
+　　接下来n行每行两个数ai，bi，描述小H的各个装车的时间段。
+　　接下来n行每行两个数ci，di，描述小W的各个装车的时间段。
+输出格式
+　　输出一行，一个正整数，表示两人可以聊多长时间。
+样例输入
+4
+1 3
+5 6
+9 13
+14 15
+2 4
+5 7
+10 11
+13 14
+样例输出
+3
+数据规模和约定
+　　对于所有的评测用例，1 ≤ n ≤ 2000, ai &lt; bi &lt; ai&#43;1，ci &lt; di &lt; ci&#43;1,对于所有的i(1 ≤ i ≤ n)有，1 ≤ ai, bi, ci, di ≤ 1000000。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://code.deqiang.wang/posts/csp2018-9-2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-15T14:55:21+00:00" />
+<meta property="article:modified_time" content="2019-08-15T14:55:21+00:00" />
+
+
+
+
+
+<link rel="canonical" href="http://code.deqiang.wang/posts/csp2018-9-2/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.0fa2dc75ed1b76894ac0e062b10a6c4730daa745096fa120114b290ed8a48788.css" integrity="sha256-D6Lcde0bdolKwOBisQpsRzDap0UJb6EgEUspDtikh4g=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/avatar32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/avatar16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.85.0" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Code is poetry.
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">Categories</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">Tags</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://code.deqiang.wang/posts/csp2018-9-2/">
+              CSP 2018-9-2 买菜
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2019-08-15T14:55:21Z">
+                August 15, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/csp/">CSP</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>问题描述</p>
+<p>　　小H和小W来到了一条街上，两人分开买菜，他们买菜的过程可以描述为，去店里买一些菜然后去旁边的一个广场把菜装上车，两人都要买n种菜，所以也都要装n次车。具体的，对于小H来说有n个不相交的时间段[a1,b1],[a2,b2]&hellip;[an,bn]在装车，对于小W来说有n个不相交的时间段[c1,d1],[c2,d2]&hellip;[cn,dn]在装车。其中，一个时间段[s, t]表示的是从时刻s到时刻t这段时间，时长为t-s。
+　　由于他们是好朋友，他们都在广场上装车的时候会聊天，他们想知道他们可以聊多长时间。</p>
+<p>输入格式</p>
+<p>　　输入的第一行包含一个正整数n，表示时间段的数量。
+　　接下来n行每行两个数ai，bi，描述小H的各个装车的时间段。
+　　接下来n行每行两个数ci，di，描述小W的各个装车的时间段。</p>
+<p>输出格式</p>
+<p>　　输出一行，一个正整数，表示两人可以聊多长时间。</p>
+<p>样例输入</p>
+<p>4
+1 3
+5 6
+9 13
+14 15
+2 4
+5 7
+10 11
+13 14</p>
+<p>样例输出</p>
+<p>3</p>
+<p>数据规模和约定</p>
+<p>　　对于所有的评测用例，1 ≤ n ≤ 2000, ai &lt; bi &lt; ai+1，ci &lt; di &lt; ci+1,对于所有的i(1 ≤ i ≤ n)有，1 ≤ ai, bi, ci, di ≤ 1000000。</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#include</span>  <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&lt;iostream&gt;</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">
+</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
+<span style="color:#fb660a;font-weight:bold">using</span> <span style="color:#fb660a;font-weight:bold">namespace</span> std;
+
+<span style="color:#fb660a;font-weight:bold">const</span> <span style="color:#cdcaa9;font-weight:bold">int</span> N = <span style="color:#0086f7;font-weight:bold">2005</span>;
+<span style="color:#fb660a;font-weight:bold">struct</span>  time {
+<span style="color:#cdcaa9;font-weight:bold">int</span> x, y;
+}  h[N], w[N];
+
+<span style="color:#cdcaa9;font-weight:bold">int</span> <span style="color:#ff0086;font-weight:bold">main</span>()
+{
+	<span style="color:#cdcaa9;font-weight:bold">int</span> n;
+	cin &gt;&gt; n;
+	<span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> i = <span style="color:#0086f7;font-weight:bold">1</span>; i &lt;= n; i++) {
+		cin &gt;&gt; h[i].x;
+		cin &gt;&gt; h[i].y;
+	}
+	<span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> i = <span style="color:#0086f7;font-weight:bold">1</span>; i &lt;= n; i++) {
+		cin &gt;&gt; w[i].x;
+		cin &gt;&gt; w[i].y;
+	}
+	<span style="color:#cdcaa9;font-weight:bold">long</span> <span style="color:#cdcaa9;font-weight:bold">long</span> aus = <span style="color:#0086f7;font-weight:bold">0</span>;
+	<span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> i = <span style="color:#0086f7;font-weight:bold">1</span>, j = <span style="color:#0086f7;font-weight:bold">1</span>; i &lt;= n &amp;&amp; j &lt;= n;) {
+		<span style="color:#fb660a;font-weight:bold">if</span> (h[i].x &lt; w[j].x) {
+			<span style="color:#fb660a;font-weight:bold">if</span> (h[i].y &lt;= w[j].x) {
+				i++;
+			}
+			<span style="color:#fb660a;font-weight:bold">else</span> <span style="color:#fb660a;font-weight:bold">if</span> (h[i].y &lt;= w[j].y)
+			{
+				aus += h[i].y - w[j].x;
+				i++;
+			}
+			<span style="color:#fb660a;font-weight:bold">else</span> {
+				aus += w[j].y - w[j].x;
+				j++;<span style="color:#080;background-color:#0f140f;font-style:italic">//
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>			}
+		}
+		<span style="color:#fb660a;font-weight:bold">else</span>
+		{
+			<span style="color:#fb660a;font-weight:bold">if</span> (h[i].x &gt;= w[j].y) {
+				j++;
+			}
+			<span style="color:#fb660a;font-weight:bold">else</span> <span style="color:#fb660a;font-weight:bold">if</span> (h[i].y &gt;= w[j].y)
+			{
+				aus += w[j].y - h[i].x;
+				j++;
+			}
+			<span style="color:#fb660a;font-weight:bold">else</span> {
+				aus += h[i].y - h[i].x;
+				i++;
+			}
+		}
+	}
+	cout &lt;&lt; aus;
+	<span style="color:#fb660a;font-weight:bold">return</span> <span style="color:#0086f7;font-weight:bold">0</span>;
+}
+
+</code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "code-rmsprdt3mn" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Francis 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.369d90111ae4409b4e51de5efd23a46b92663fcc82dc9a0efde7f70bffc3f949.js" integrity="sha256-Np2QERrkQJtOUd5e/SOka5JmP8yC3JoO/ef3C//D&#43;Uk="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

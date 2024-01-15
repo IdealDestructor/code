@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>双指针 on Code is poetry.</title>
+    <link>http://code.deqiang.wang/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</link>
+    <description>Recent content in 双指针 on Code is poetry.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 Jun 2022 14:22:35 +0000</lastBuildDate><atom:link href="http://code.deqiang.wang/tags/%E5%8F%8C%E6%8C%87%E9%92%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode[977] 有序数组的平方</title>
+      <link>http://code.deqiang.wang/posts/leetcode977-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</link>
+      <pubDate>Thu, 02 Jun 2022 14:22:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode977-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</guid>
+      <description>&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。&lt;/p&gt;
+&lt;p&gt;示例 1：&lt;/p&gt;
+&lt;p&gt;输入：nums = [-4,-1,0,3,10]
+输出：[0,1,9,16,100]
+解释：平方后，数组变为 [16,1,0,9,100]
+排序后，数组变为 [0,1,9,16,100]
+示例 2：&lt;/p&gt;
+&lt;p&gt;输入：nums = [-7,-3,2,3,11]
+输出：[4,9,9,49,121]&lt;/p&gt;
+&lt;p&gt;提示：&lt;/p&gt;
+&lt;p&gt;1 &amp;lt;= nums.length &amp;lt;= 104
+-104 &amp;lt;= nums[i] &amp;lt;= 104
+nums 已按 非递减顺序 排序&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[283] 移动零</title>
+      <link>http://code.deqiang.wang/posts/leetcode283-%E7%A7%BB%E5%8A%A8%E9%9B%B6/</link>
+      <pubDate>Fri, 03 Dec 2021 17:05:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode283-%E7%A7%BB%E5%8A%A8%E9%9B%B6/</guid>
+      <description>&lt;p&gt;Related Topics:
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;双指针&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/two-pointers/&#34;&gt;https://leetcode.com/tag/two-pointers/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;移除元素&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/remove-element/&#34;&gt;https://leetcode.com/problems/remove-element/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给定一个数组 &lt;code&gt;nums&lt;/code&gt;，编写一个函数将所有 &lt;code&gt;0&lt;/code&gt; 移动到数组的末尾，同时保持非零元素的相对顺序。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: [0,1,0,3,12]
+输出: [1,3,12,0,0]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;说明&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;必须在原数组上操作，不能拷贝额外的数组。&lt;/li&gt;
+&lt;li&gt;尽量减少操作次数。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[27] 移除元素</title>
+      <link>http://code.deqiang.wang/posts/leetcode27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Thu, 02 Dec 2021 17:05:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</guid>
+      <description>&lt;p&gt;Related Topics:
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;双指针&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/two-pointers/&#34;&gt;https://leetcode.com/tag/two-pointers/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;删除有序数组中的重复项&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/remove-duplicates-from-sorted-array/&#34;&gt;https://leetcode.com/problems/remove-duplicates-from-sorted-array/&lt;/a&gt;
+&amp;ldquo;移除链表元素&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/remove-linked-list-elements/&#34;&gt;https://leetcode.com/problems/remove-linked-list-elements/&lt;/a&gt;
+&amp;ldquo;移动零&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/move-zeroes/&#34;&gt;https://leetcode.com/problems/move-zeroes/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你一个数组 &lt;code&gt;nums&lt;/code&gt;和一个值 &lt;code&gt;val&lt;/code&gt;，你需要 &lt;strong&gt;原地&lt;/strong&gt; 移除所有数值等于 &lt;code&gt;val&lt;/code&gt;的元素，并返回移除后数组的新长度。&lt;/p&gt;
+&lt;p&gt;不要使用额外的数组空间，你必须仅使用 &lt;code&gt;O(1)&lt;/code&gt; 额外空间并 &lt;strong&gt;原地 修改输入数组&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;说明:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为什么返回数值是整数，但输出的答案是数组呢?&lt;/p&gt;
+&lt;p&gt;请注意，输入数组是以**「引用」**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。&lt;/p&gt;
+&lt;p&gt;你可以想象内部操作如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝
+int len = removeElement(nums, val);
+
+// 在函数里修改输入数组对于调用者是可见的。
+// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
+for (int i = 0; i &amp;lt; len; i++) {
+    print(nums[i]);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：nums = [3,2,2,3], val = 3
+输出：2, nums = [2,2]
+解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：nums = [0,1,2,2,3,0,4,2], val = 2
+输出：5, nums = [0,1,4,0,3]
+解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= nums.length &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= nums[i] &amp;lt;= 50&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= val &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[42] 接雨水</title>
+      <link>http://code.deqiang.wang/posts/leetcode42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/</link>
+      <pubDate>Tue, 05 Oct 2021 21:03:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/</guid>
+      <description>&lt;p&gt;Related Topics:
+&amp;ldquo;栈&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/stack/&#34;&gt;https://leetcode.com/tag/stack/&lt;/a&gt;
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;双指针&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/two-pointers/&#34;&gt;https://leetcode.com/tag/two-pointers/&lt;/a&gt;
+&amp;ldquo;动态规划&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/dynamic-programming/&#34;&gt;https://leetcode.com/tag/dynamic-programming/&lt;/a&gt;
+&amp;ldquo;单调栈&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/monotonic-stack/&#34;&gt;https://leetcode.com/tag/monotonic-stack/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;盛最多水的容器&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/container-with-most-water/&#34;&gt;https://leetcode.com/problems/container-with-most-water/&lt;/a&gt;
+&amp;ldquo;除自身以外数组的乘积&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/product-of-array-except-self/&#34;&gt;https://leetcode.com/problems/product-of-array-except-self/&lt;/a&gt;
+&amp;ldquo;接雨水 II&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/trapping-rain-water-ii/&#34;&gt;https://leetcode.com/problems/trapping-rain-water-ii/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;倒水-httpsleetcodecomproblemspour-water&#34;&gt;
+  &amp;ldquo;倒水&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/pour-water/&#34;&gt;https://leetcode.com/problems/pour-water/&lt;/a&gt;
+  &lt;a class=&#34;heading-link&#34; href=&#34;#%e5%80%92%e6%b0%b4-httpsleetcodecomproblemspour-water&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给定 &lt;code&gt;n&lt;/code&gt; 个非负整数表示每个宽度为 &lt;code&gt;1&lt;/code&gt; 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]
+输出：6
+解释：上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：height = [4,2,0,3,2,5]
+输出：9
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;n == height.length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 2 * 104&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= height[i] &amp;lt;= 105&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[88] 合并两个有序数组</title>
+      <link>http://code.deqiang.wang/posts/leetcode88-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Wed, 28 Apr 2021 18:43:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode88-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;双指针&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/two-pointers/&#34;&gt;https://leetcode.com/tag/two-pointers/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;合并两个有序链表&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/merge-two-sorted-lists/&#34;&gt;https://leetcode.com/problems/merge-two-sorted-lists/&lt;/a&gt;
+&amp;ldquo;有序数组的平方&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/squares-of-a-sorted-array/&#34;&gt;https://leetcode.com/problems/squares-of-a-sorted-array/&lt;/a&gt;
+&amp;ldquo;区间列表的交集&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/interval-&#34;&gt;https://leetcode.com/problems/interval-&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你两个有序整数数组 &lt;code&gt;nums1&lt;/code&gt;和 &lt;code&gt;nums2&lt;/code&gt;，请你将 &lt;code&gt;nums2&lt;/code&gt;合并到 &lt;code&gt;nums1&lt;/code&gt;中*，*使 &lt;code&gt;nums1&lt;/code&gt;成为一个有序数组。&lt;/p&gt;
+&lt;p&gt;初始化 &lt;code&gt;nums1&lt;/code&gt; 和 &lt;code&gt;nums2&lt;/code&gt; 的元素数量分别为 &lt;code&gt;m&lt;/code&gt; 和 &lt;code&gt;n&lt;/code&gt;。你可以假设 &lt;code&gt;nums1&lt;/code&gt;的空间大小等于 &lt;code&gt;m + n&lt;/code&gt;，这样它就有足够的空间保存来自 &lt;code&gt;nums2&lt;/code&gt; 的元素。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+输出：[1,2,2,3,5,6]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：nums1 = [1], m = 1, nums2 = [], n = 0
+输出：[1]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;nums1.length == m + n&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;nums2.length == n&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;0 &amp;lt;= m, n &amp;lt;= 200&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;1 &amp;lt;= m + n &amp;lt;= 200&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;-109 &amp;lt;= nums1[i], nums2[i] &amp;lt;= 109&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[141] 环形链表</title>
+      <link>http://code.deqiang.wang/posts/leetcode141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Sat, 24 Apr 2021 17:05:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;链表&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/linked-list/&#34;&gt;https://leetcode.com/tag/linked-list/&lt;/a&gt;
+&amp;ldquo;双指针&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/two-pointers/&#34;&gt;https://leetcode.com/tag/two-pointers/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;环形链表 II&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/linked-list-cycle-ii/&#34;&gt;https://leetcode.com/problems/linked-list-cycle-ii/&lt;/a&gt;
+&amp;ldquo;快乐数&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/happy-number/&#34;&gt;https://leetcode.com/problems/happy-number/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给定一个链表，判断链表中是否有环。&lt;/p&gt;
+&lt;p&gt;如果链表中有某个节点，可以通过连续跟踪 &lt;code&gt;next&lt;/code&gt; 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 &lt;code&gt;pos&lt;/code&gt; 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 &lt;code&gt;pos&lt;/code&gt; 是 &lt;code&gt;-1&lt;/code&gt;，则在该链表中没有环。&lt;strong&gt;注意：pos 不作为参数进行传递&lt;/strong&gt;，仅仅是为了标识链表的实际情况。&lt;/p&gt;
+&lt;p&gt;如果链表中存在环，则返回 &lt;code&gt;true&lt;/code&gt; 。 否则，返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你能用 &lt;em&gt;O(1)&lt;/em&gt;（即，常量）内存解决此问题吗？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：head = [1,2], pos = 0
+输出：true
+解释：链表中有一个环，其尾部连接到第一个节点。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：head = [1], pos = -1
+输出：false
+解释：链表中没有环。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;链表中节点的数目范围是 &lt;code&gt;[0, 104]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-105 &amp;lt;= Node.val &amp;lt;= 105&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pos&lt;/code&gt; 为 &lt;code&gt;-1&lt;/code&gt; 或者链表中的一个 &lt;strong&gt;有效索引&lt;/strong&gt; 。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[26] 删除有序数组中的重复项</title>
+      <link>http://code.deqiang.wang/posts/leetcode26-%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</link>
+      <pubDate>Mon, 19 Apr 2021 16:22:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode26-%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt; &amp;ldquo;双指针&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/two-pointers/&#34;&gt;https://leetcode.com/tag/two-pointers/&lt;/a&gt; Similar Questions: &amp;ldquo;移除元素&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/remove-element/&#34;&gt;https://leetcode.com/problems/remove-element/&lt;/a&gt; &amp;ldquo;删除有序数组中的重复项 II&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/&#34;&gt;https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你一个有序数组 &lt;code&gt;nums&lt;/code&gt; ，请你&lt;strong&gt;原地&lt;/strong&gt; 删除重复出现的元素，使每个元素 &lt;strong&gt;只出现一次&lt;/strong&gt; ，返回删除后数组的新长度。&lt;/p&gt;
+&lt;p&gt;不要使用额外的数组空间，你必须在 &lt;strong&gt;原地 修改输入数组&lt;/strong&gt;并在使用 O(1) 额外空间的条件下完成。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;说明:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为什么返回数值是整数，但输出的答案是数组呢?&lt;/p&gt;
+&lt;p&gt;请注意，输入数组是以**「引用」**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。&lt;/p&gt;
+&lt;p&gt;你可以想象内部操作如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+int len = removeDuplicates(nums);
+
+// 在函数里修改输入数组对于调用者是可见的。
+// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
+for (int i = 0; i &amp;lt; len; i++) {
+    print(nums[i]);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：nums = [1,1,2]
+输出：2, nums = [1,2]
+解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：nums = [0,0,1,1,1,2,2,3,3,4]
+输出：5, nums = [0,1,2,3,4]
+解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= nums.length &amp;lt;= 3 * 104&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;104 &amp;lt;= nums[i] &amp;lt;= 104&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nums&lt;/code&gt; 已按升序排列&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[15] 三数之和</title>
+      <link>http://code.deqiang.wang/posts/leetcode15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Sat, 10 Apr 2021 11:29:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt; &amp;ldquo;双指针&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/two-pointers/&#34;&gt;https://leetcode.com/tag/two-pointers/&lt;/a&gt; Similar Questions: &amp;ldquo;两数之和&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/two-sum/&#34;&gt;https://leetcode.com/problems/two-sum/&lt;/a&gt; &amp;ldquo;最接近的三数之和&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/3sum-closest/&#34;&gt;https://leetcode.com/problems/3sum-closest/&lt;/a&gt; &amp;ldquo;四数之和&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/4sum/&#34;&gt;https://leetcode.com/problems/4sum/&lt;/a&gt; &amp;ldquo;较小的三数之和&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/3sum-smaller/&#34;&gt;https://leetcode.com/problems/3sum-smaller/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你一个包含 &lt;code&gt;n&lt;/code&gt; 个整数的数组 &lt;code&gt;nums&lt;/code&gt;，判断 &lt;code&gt;nums&lt;/code&gt; 中是否存在三个元素 *a，b，c ，*使得 *a + b + c =*0 ？请你找出所有和为 &lt;code&gt;0&lt;/code&gt; 且不重复的三元组。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;*注意：**答案中不可以包含重复的三元组。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：nums = [-1,0,1,2,-1,-4]
+输出：[[-1,-1,2],[-1,0,1]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：nums = []
+输出：[]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：nums = [0]
+输出：[]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= nums.length &amp;lt;= 3000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;105 &amp;lt;= nums[i] &amp;lt;= 105&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[11] 盛最多水的容器</title>
+      <link>http://code.deqiang.wang/posts/leetcode11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Fri, 02 Apr 2021 15:29:45 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt; &amp;ldquo;双指针&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/two-pointers/&#34;&gt;https://leetcode.com/tag/two-pointers/&lt;/a&gt; Similar Questions: &amp;ldquo;接雨水&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/trapping-rain-water/&#34;&gt;https://leetcode.com/problems/trapping-rain-water/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给你 &lt;code&gt;n&lt;/code&gt; 个非负整数 &lt;code&gt;a1，a2，...，a``n&lt;/code&gt;，每个数代表坐标中的一个点 &lt;code&gt;(i, ai)&lt;/code&gt; 。在坐标内画 &lt;code&gt;n&lt;/code&gt; 条垂直线，垂直线 &lt;code&gt;i&lt;/code&gt; 的两个端点分别为 &lt;code&gt;(i, ai)&lt;/code&gt; 和 &lt;code&gt;(i, 0)&lt;/code&gt; 。找出其中的两条线，使得它们与 &lt;code&gt;x&lt;/code&gt; 轴共同构成的容器可以容纳最多的水。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;*说明：**你不能倾斜容器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：[1,8,6,2,5,4,8,3,7]
+输出：49
+解释：图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：height = [1,1]
+输出：1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：height = [4,3,2,1,4]
+输出：16
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 4：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：height = [1,2,1]
+输出：2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;n = height.length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2 &amp;lt;= n &amp;lt;= 3 * 104&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= height[i] &amp;lt;= 3 * 104&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[3] 无重复字符的最长子串</title>
+      <link>http://code.deqiang.wang/posts/leetcode3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</link>
+      <pubDate>Mon, 29 Mar 2021 12:22:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;哈希表&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/hash-table/&#34;&gt;https://leetcode.com/tag/hash-table/&lt;/a&gt;
+&amp;ldquo;双指针&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/two-pointers/&#34;&gt;https://leetcode.com/tag/two-pointers/&lt;/a&gt;
+&amp;ldquo;字符串&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/string/&#34;&gt;https://leetcode.com/tag/string/&lt;/a&gt;
+&amp;ldquo;Sliding Window&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/sliding-window/&#34;&gt;https://leetcode.com/tag/sliding-window/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;similar-questions&#34;&gt;
+  Similar Questions:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#similar-questions&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;至多包含两个不同字符的最长子串&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/&#34;&gt;https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/&lt;/a&gt;
+&amp;ldquo;至多包含 K 个不同字符的最长子串&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/&#34;&gt;https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/&lt;/a&gt;
+&amp;ldquo;K 个不同整数的子数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/subarrays-with-k-different-integers/&#34;&gt;https://leetcode.com/problems/subarrays-with-k-different-integers/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给定一个字符串，请你找出其中不含有重复字符的 &lt;strong&gt;最长子串&lt;/strong&gt;的长度。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: s = &amp;#34;abcabcbb&amp;#34;
+输出: 3 
+解释: 因为无重复字符的最长子串是 &amp;#34;abc&amp;#34;，所以其长度为 3。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: s = &amp;#34;bbbbb&amp;#34;
+输出: 1
+解释: 因为无重复字符的最长子串是 &amp;#34;b&amp;#34;，所以其长度为 1。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: s = &amp;#34;pwwkew&amp;#34;
+输出: 3
+解释: 因为无重复字符的最长子串是 &amp;#34;wke&amp;#34;，所以其长度为 3。
+     请注意，你的答案必须是 子串 的长度，&amp;#34;pwke&amp;#34; 是一个子序列，不是子串。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 4:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入: s = &amp;#34;&amp;#34;
+输出: 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= s.length &amp;lt;= 5 * 104&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt; 由英文字母、数字、符号和空格组成&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

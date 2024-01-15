@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>滑动窗口 on Code is poetry.</title>
+    <link>http://code.deqiang.wang/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</link>
+    <description>Recent content in 滑动窗口 on Code is poetry.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 Dec 2021 14:22:35 +0000</lastBuildDate><atom:link href="http://code.deqiang.wang/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode[209] 长度最小的子数组</title>
+      <link>http://code.deqiang.wang/posts/leetcode209-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Tue, 14 Dec 2021 14:22:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode209-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/</guid>
+      <description>&lt;p&gt;Related Topics:
+&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;二分查找&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/binary-search/&#34;&gt;https://leetcode.com/tag/binary-search/&lt;/a&gt;
+&amp;ldquo;前缀和&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/prefix-sum/&#34;&gt;https://leetcode.com/tag/prefix-sum/&lt;/a&gt;
+&amp;ldquo;滑动窗口&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/sliding-window/&#34;&gt;https://leetcode.com/tag/sliding-window/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;最小覆盖子串&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/minimum-window-substring/&#34;&gt;https://leetcode.com/problems/minimum-window-substring/&lt;/a&gt;
+&amp;ldquo;和等于 k 的最长子数组长度&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/&#34;&gt;https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/&lt;/a&gt;
+&amp;ldquo;最长重复子数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/maximum-length-of-repeated-subarray/&#34;&gt;https://leetcode.com/problems/maximum-length-of-repeated-subarray/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给定一个含有 &lt;code&gt;n&lt;/code&gt;个正整数的数组和一个正整数 &lt;code&gt;target&lt;/code&gt;&lt;strong&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;找出该数组中满足其和&lt;code&gt;≥ target&lt;/code&gt;的长度最小的 &lt;strong&gt;连续子数组&lt;/strong&gt; &lt;code&gt;[numsl, numsl+1, ..., numsr-1, numsr]&lt;/code&gt; ，并返回其长度**。**如果不存在符合条件的子数组，返回 &lt;code&gt;0&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：target = 7, nums = [2,3,1,2,4,3]
+输出：2
+解释：子数组 [4,3] 是该条件下的长度最小的子数组。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：target = 4, nums = [1,4,4]
+输出：1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：target = 11, nums = [1,1,1,1,1,1,1,1]
+输出：0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= target &amp;lt;= 109&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 105&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums[i] &amp;lt;= 105&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果你已经实现&lt;code&gt;O(n)&lt;/code&gt; 时间复杂度的解法, 请尝试设计一个 &lt;code&gt;O(n log(n))&lt;/code&gt; 时间复杂度的解法。[&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode[718] 最长重复子数组</title>
+      <link>http://code.deqiang.wang/posts/leetcode718-%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Wed, 19 May 2021 21:36:35 +0000</pubDate>
+      
+      <guid>http://code.deqiang.wang/posts/leetcode718-%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E6%95%B0%E7%BB%84/</guid>
+      <description>&lt;h3 id=&#34;related-topics&#34;&gt;
+  Related Topics:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#related-topics&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/array/&#34;&gt;https://leetcode.com/tag/array/&lt;/a&gt;
+&amp;ldquo;哈希表&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/hash-table/&#34;&gt;https://leetcode.com/tag/hash-table/&lt;/a&gt;
+&amp;ldquo;二分查找&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/binary-search/&#34;&gt;https://leetcode.com/tag/binary-search/&lt;/a&gt;
+&amp;ldquo;动态规划&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/tag/dynamic-programming/&#34;&gt;https://leetcode.com/tag/dynamic-programming/&lt;/a&gt;
+Similar Questions:
+&amp;ldquo;长度最小的子数组&amp;rdquo;: &lt;a href=&#34;https://leetcode.com/problems/minimum-size-subarray-sum/&#34;&gt;https://leetcode.com/problems/minimum-size-subarray-sum/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;
+  Problem:
+  &lt;a class=&#34;heading-link&#34; href=&#34;#problem&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
+    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;给两个整数数组 &lt;code&gt;A&lt;/code&gt; 和 &lt;code&gt;B&lt;/code&gt; ，返回两个数组中公共的、长度最长的子数组的长度。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;输入：
+A: [1,2,3,2,1]
+B: [3,2,1,4,7]
+输出：3
+解释：
+长度最长的公共子数组是 [3, 2, 1] 。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= len(A), len(B) &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= A[i], B[i] &amp;lt; 100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
